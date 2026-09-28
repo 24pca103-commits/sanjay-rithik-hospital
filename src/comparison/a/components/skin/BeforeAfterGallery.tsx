@@ -125,7 +125,7 @@ import headerTreatmentRoom from "@/assets/luxury-glow/header-treatment-room-teal
 const FEATURE = {
   image: headerTreatmentRoom,
   title: "Premium Treatment Room",
-  detail: "A calm clinical setting for consultation-led care in a teal wellness direction.",
+  detail: "A calm clinical setting for laser and skin-wellness planning in a teal premium direction.",
 };
 
 const CASES = [
@@ -133,18 +133,21 @@ const CASES = [
     image: beforeAfterFace,
     title: "Facial",
     detail: "4 Sessions",
+    note: "Upper lip, chin and facial refinement",
     comparison: true,
   },
   {
     image: beforeAfterLeg,
     title: "Bikini Area",
     detail: "5 Sessions",
+    note: "Focused comfort-led laser planning",
     comparison: true,
   },
   {
     image: beforeAfterKnee,
     title: "Legs",
     detail: "6 Sessions",
+    note: "Smooth-skin body-care pathway",
     comparison: true,
   },
 ] as const;
@@ -153,6 +156,7 @@ type PremiumGalleryCardProps = {
   image: string;
   title: string;
   detail: string;
+  note: string;
   comparison?: boolean;
 };
 
@@ -160,6 +164,7 @@ function PremiumGalleryCard({
   image,
   title,
   detail,
+  note,
   comparison = false,
 }: PremiumGalleryCardProps) {
   return (
@@ -175,7 +180,8 @@ function PremiumGalleryCard({
       <div className="premium-gallery-copy">
         {!comparison && <span>Premium care</span>}
         <h3>{title}</h3>
-        <p>{detail}</p>
+        <strong>{detail}</strong>
+        <p>{note}</p>
       </div>
     </article>
   );
@@ -192,13 +198,13 @@ export function BeforeAfterGallery() {
           <p>Reference comparisons</p>
           <h2>Premium Skin Wellness Gallery</h2>
           <p>
-            A cleaner editorial view of skin clarity, consultation-led planning and realistic
-            reference outcomes, kept in a teal clinical wellness direction.
+            A cleaner editorial view of consultation-led laser planning, session pathways and
+            realistic reference visuals, kept in a teal clinical wellness direction.
           </p>
           <div className="premium-gallery-points" aria-label="Gallery principles">
-            <span>Clinical clarity</span>
-            <span>Calm image rhythm</span>
-            <span>Realistic references</span>
+            <span>Laser planning</span>
+            <span>Session clarity</span>
+            <span>Premium care</span>
           </div>
         </header>
 
@@ -218,6 +224,7 @@ export function BeforeAfterGallery() {
               image={item.image}
               title={item.title}
               detail={item.detail}
+              note={item.note}
               comparison={item.comparison}
             />
           ))}
@@ -227,7 +234,7 @@ export function BeforeAfterGallery() {
           <ShieldCheck />
           <p>
             Visuals are educational and brand-experience references. Suitability, sessions,
-            recovery and outcomes vary and must be discussed with the dermatologist.
+            comfort, recovery and outcomes vary and must be discussed with the dermatologist.
           </p>
         </div>
       </div>
