@@ -121,43 +121,31 @@ import beforeAfterFace from "@/assets/luxury-glow/before-after-face.png";
 import beforeAfterKnee from "@/assets/luxury-glow/before-after-knee.png";
 import beforeAfterLeg from "@/assets/luxury-glow/before-after-leg.png";
 import headerTreatmentRoom from "@/assets/luxury-glow/header-treatment-room-teal.png";
-import legSkincareGlow from "@/assets/luxury-glow/leg-skincare-glow.png";
-import premiumConcernMirror from "@/assets/premium-concern-mirror.png";
-import spaRoomTreatment from "@/assets/luxury-glow/spa-room-treatment.png";
 
 const FEATURE = {
-  image: premiumConcernMirror,
-  title: "Skin Clarity Moment",
-  detail: "A premium mirror-led visual for noticing skin changes with calm confidence.",
+  image: headerTreatmentRoom,
+  title: "Premium Treatment Room",
+  detail: "A calm clinical setting for consultation-led care in a teal wellness direction.",
 };
 
 const CASES = [
   {
     image: beforeAfterFace,
-    title: "Facial Skin Renewal",
-    detail: "Tone, texture and visible clarity references",
-  },
-  {
-    image: legSkincareGlow,
-    title: "Smooth Skin Planning",
-    detail: "Treatment goals discussed with clarity before sessions begin",
-    featured: false,
+    title: "Facial",
+    detail: "4 Sessions",
+    comparison: true,
   },
   {
     image: beforeAfterLeg,
-    title: "Laser Hair Reduction",
-    detail: "Reference visual for smooth-skin treatment goals",
-    featured: false,
-  },
-  {
-    image: headerTreatmentRoom,
-    title: "Clinical Comfort",
-    detail: "A calm dermatology setting with teal, premium clinical cues",
+    title: "Bikini Area",
+    detail: "5 Sessions",
+    comparison: true,
   },
   {
     image: beforeAfterKnee,
-    title: "Targeted Body Care",
-    detail: "Reference visual for focused treatment planning",
+    title: "Legs",
+    detail: "6 Sessions",
+    comparison: true,
   },
 ] as const;
 
@@ -165,15 +153,17 @@ type PremiumGalleryCardProps = {
   image: string;
   title: string;
   detail: string;
+  comparison?: boolean;
 };
 
 function PremiumGalleryCard({
   image,
   title,
   detail,
+  comparison = false,
 }: PremiumGalleryCardProps) {
   return (
-    <article className="premium-gallery-card">
+    <article className={comparison ? "premium-gallery-card is-comparison" : "premium-gallery-card"}>
       <div className="premium-gallery-photo">
         <img
           src={image}
@@ -183,7 +173,7 @@ function PremiumGalleryCard({
         />
       </div>
       <div className="premium-gallery-copy">
-        <span>Premium care</span>
+        {!comparison && <span>Premium care</span>}
         <h3>{title}</h3>
         <p>{detail}</p>
       </div>
@@ -198,31 +188,28 @@ export function BeforeAfterGallery() {
       className="premium-gallery-section"
     >
       <div className="premium-gallery-shell">
-        <div className="premium-gallery-editorial">
-          <figure className="premium-gallery-feature">
-            <img src={FEATURE.image} alt={FEATURE.title} loading="lazy" draggable="false" />
-            <figcaption>
-              <span>Signature visual</span>
-              <strong>{FEATURE.title}</strong>
-              <p>{FEATURE.detail}</p>
-            </figcaption>
-          </figure>
-          <header className="premium-gallery-header">
-            <p>
-              Reference comparisons
-            </p>
-            <h2>Premium Skin Wellness Gallery</h2>
-            <p>
-              A cleaner editorial view of skin clarity, consultation-led planning and realistic
-              reference outcomes, kept in a teal clinical wellness direction.
-            </p>
-            <div className="premium-gallery-points" aria-label="Gallery principles">
-              <span>Clinical clarity</span>
-              <span>Calm image rhythm</span>
-              <span>Realistic references</span>
-            </div>
-          </header>
-        </div>
+        <header className="premium-gallery-header">
+          <p>Reference comparisons</p>
+          <h2>Premium Skin Wellness Gallery</h2>
+          <p>
+            A cleaner editorial view of skin clarity, consultation-led planning and realistic
+            reference outcomes, kept in a teal clinical wellness direction.
+          </p>
+          <div className="premium-gallery-points" aria-label="Gallery principles">
+            <span>Clinical clarity</span>
+            <span>Calm image rhythm</span>
+            <span>Realistic references</span>
+          </div>
+        </header>
+
+        <figure className="premium-gallery-feature">
+          <img src={FEATURE.image} alt={FEATURE.title} loading="lazy" draggable="false" />
+          <figcaption>
+            <span>Signature visual</span>
+            <strong>{FEATURE.title}</strong>
+            <p>{FEATURE.detail}</p>
+          </figcaption>
+        </figure>
 
         <div className="premium-gallery-grid">
           {CASES.map((item) => (
@@ -231,6 +218,7 @@ export function BeforeAfterGallery() {
               image={item.image}
               title={item.title}
               detail={item.detail}
+              comparison={item.comparison}
             />
           ))}
         </div>
