@@ -229,6 +229,10 @@ export function VersionA({ render, onAgeSelection }: { render: (sections: Record
               <small>Skin Laser · Cosmetology</small>
             </span>
           </a>
+          <div className="premium-nav-trust" aria-label="Clinic trust details">
+            <span><MapPin className="size-4" /> Local clinic · Karur</span>
+            <span><Star className="size-4 fill-current" /> 4.5 · 440 Google reviews</span>
+          </div>
           <TrackedLink
             href="#b-consultation"
             event="consultation_cta_clicked"
@@ -285,8 +289,6 @@ export function VersionA({ render, onAgeSelection }: { render: (sections: Record
             </div>
             <div className="premium-hero-badges">
               <span><ShieldCheck className="size-4" /> Luxury clinical skincare</span>
-              <span><Star className="size-4" /> 4.5 Google rating</span>
-              <span><MapPin className="size-4" /> Karur</span>
             </div>
           </div>
           <HeroImageDeck />
