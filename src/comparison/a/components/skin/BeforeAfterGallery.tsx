@@ -125,18 +125,17 @@ import legSkincareGlow from "@/assets/luxury-glow/leg-skincare-glow.png";
 import premiumConcernMirror from "@/assets/premium-concern-mirror.png";
 import spaRoomTreatment from "@/assets/luxury-glow/spa-room-treatment.png";
 
+const FEATURE = {
+  image: premiumConcernMirror,
+  title: "Skin Clarity Moment",
+  detail: "A premium mirror-led visual for noticing skin changes with calm confidence.",
+};
+
 const CASES = [
   {
     image: beforeAfterFace,
     title: "Facial Skin Renewal",
     detail: "Tone, texture and visible clarity references",
-    featured: true,
-  },
-  {
-    image: premiumConcernMirror,
-    title: "Skin Clarity Moment",
-    detail: "A softer mirror-led visual for noticing skin changes with confidence",
-    featured: false,
   },
   {
     image: legSkincareGlow,
@@ -154,13 +153,11 @@ const CASES = [
     image: headerTreatmentRoom,
     title: "Clinical Comfort",
     detail: "A calm dermatology setting with teal, premium clinical cues",
-    featured: false,
   },
   {
     image: beforeAfterKnee,
     title: "Targeted Body Care",
     detail: "Reference visual for focused treatment planning",
-    featured: false,
   },
 ] as const;
 
@@ -168,17 +165,15 @@ type PremiumGalleryCardProps = {
   image: string;
   title: string;
   detail: string;
-  featured?: boolean;
 };
 
 function PremiumGalleryCard({
   image,
   title,
   detail,
-  featured = false,
 }: PremiumGalleryCardProps) {
   return (
-    <article className={featured ? "premium-gallery-card is-featured" : "premium-gallery-card"}>
+    <article className="premium-gallery-card">
       <div className="premium-gallery-photo">
         <img
           src={image}
@@ -188,7 +183,7 @@ function PremiumGalleryCard({
         />
       </div>
       <div className="premium-gallery-copy">
-        <span>{featured ? "Signature visual" : "Premium care"}</span>
+        <span>Premium care</span>
         <h3>{title}</h3>
         <p>{detail}</p>
       </div>
@@ -203,16 +198,31 @@ export function BeforeAfterGallery() {
       className="premium-gallery-section"
     >
       <div className="premium-gallery-shell">
-        <header className="premium-gallery-header">
-          <p>
-            Reference comparisons
-          </p>
-          <h2>Premium Skin Wellness Gallery</h2>
-          <p>
-            A cleaner editorial view of skin clarity, consultation-led planning and realistic
-            reference outcomes, kept in a teal clinical wellness direction.
-          </p>
-        </header>
+        <div className="premium-gallery-editorial">
+          <figure className="premium-gallery-feature">
+            <img src={FEATURE.image} alt={FEATURE.title} loading="lazy" draggable="false" />
+            <figcaption>
+              <span>Signature visual</span>
+              <strong>{FEATURE.title}</strong>
+              <p>{FEATURE.detail}</p>
+            </figcaption>
+          </figure>
+          <header className="premium-gallery-header">
+            <p>
+              Reference comparisons
+            </p>
+            <h2>Premium Skin Wellness Gallery</h2>
+            <p>
+              A cleaner editorial view of skin clarity, consultation-led planning and realistic
+              reference outcomes, kept in a teal clinical wellness direction.
+            </p>
+            <div className="premium-gallery-points" aria-label="Gallery principles">
+              <span>Clinical clarity</span>
+              <span>Calm image rhythm</span>
+              <span>Realistic references</span>
+            </div>
+          </header>
+        </div>
 
         <div className="premium-gallery-grid">
           {CASES.map((item) => (
@@ -221,7 +231,6 @@ export function BeforeAfterGallery() {
               image={item.image}
               title={item.title}
               detail={item.detail}
-              featured={item.featured}
             />
           ))}
         </div>
