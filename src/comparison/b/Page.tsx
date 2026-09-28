@@ -25,7 +25,7 @@ import { cn } from "@/comparison/b/lib/utils";
 import heroImage from "@/comparison/b/assets/anti-aging-hero-v2.jpg";
 import videoPosterImage from "@/assets/hero-portrait.jpg";
 import { TreatmentPhoto } from "../TreatmentPhoto";
-import mirrorImage from "@/comparison/b/assets/mirror-enhanced.png";
+import premiumConcernMirror from "@/assets/premium-concern-mirror.png";
 import antiAgingReelVideo from "@/assets/videos/anti-aging-treatment-reel.mp4?url";
 import hospitalLogo from "@/comparison/b/assets/hospital-logo.png";
 import doctorKiruthika from "@/comparison/b/assets/doctor-kiruthika.jpg";
@@ -555,12 +555,12 @@ function PainMirror() {
       <div className="grid gap-12 lg:grid-cols-[.88fr_1.12fr] lg:items-center lg:gap-20">
         <Reveal>
           <img
-            src={mirrorImage}
-            alt="Woman quietly noticing changes in her reflection"
+            src={premiumConcernMirror}
+            alt="Woman noticing her skin in a mirror"
             loading="lazy"
             width={1200}
             height={800}
-            className="h-[28rem] w-full rounded-3xl object-cover shadow-lift sm:h-[36rem]"
+            className="concern-premium-image h-[28rem] w-full rounded-3xl object-cover shadow-lift sm:h-[36rem]"
           />
         </Reveal>
         <Reveal delay={100}>
