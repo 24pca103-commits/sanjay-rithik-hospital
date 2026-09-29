@@ -1788,6 +1788,55 @@
   box-shadow: 0 14px 32px -28px rgb(7 94 107 / 60%);
 }
 
+.enhanced-site .premium-gallery-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.enhanced-site .premium-gallery-summary article {
+  min-height: 150px;
+  padding: 24px;
+  border: 1px solid rgb(24 174 192 / 18%);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 94%), rgb(237 247 247 / 76%)),
+    #FFFFFF;
+  box-shadow: 0 24px 62px -52px rgb(7 94 107 / 48%);
+}
+
+.enhanced-site .premium-gallery-summary article > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgb(24 174 192 / 28%);
+  border-radius: 999px;
+  background: #075E6B;
+  color: #FFFFFF !important;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.enhanced-site .premium-gallery-summary strong {
+  display: block;
+  margin-top: 18px;
+  color: #183438;
+  font-family: "DM Serif Display", serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.enhanced-site .premium-gallery-summary p {
+  margin-top: 10px;
+  color: #68787A !important;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
 .enhanced-site .premium-gallery-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -1802,7 +1851,7 @@
   display: grid;
   grid-column: span 2;
   grid-template-rows: minmax(270px, 1fr) auto;
-  min-height: 450px;
+  min-height: 470px;
   border: 1px solid rgb(24 174 192 / 20%);
   border-radius: 18px;
   background: #FFFFFF;
@@ -1812,6 +1861,14 @@
 .enhanced-site .premium-gallery-card.is-comparison {
   background:
     linear-gradient(180deg, #FFFFFF, #EDF7F7);
+}
+
+.enhanced-site .premium-gallery-card.is-comparison:nth-child(2) .premium-gallery-photo img {
+  object-position: center 42%;
+}
+
+.enhanced-site .premium-gallery-card.is-comparison:nth-child(3) .premium-gallery-photo img {
+  object-position: center 48%;
 }
 
 .enhanced-site .premium-gallery-card.is-featured {
@@ -1871,8 +1928,8 @@
 
 .enhanced-site .premium-gallery-copy {
   position: static;
-  min-height: 158px;
-  padding: 22px 24px 24px;
+  min-height: 170px;
+  padding: 24px 26px 26px;
   border-top: 1px solid rgb(24 174 192 / 16%);
   background: #FFFFFF !important;
   color: #183438;
@@ -1887,7 +1944,7 @@
 .enhanced-site .premium-gallery-copy h3,
 .enhanced-site .premium-gallery-card.is-comparison .premium-gallery-copy h3 {
   color: #183438;
-  font-size: clamp(28px, 2.7vw, 38px);
+  font-size: clamp(30px, 2.8vw, 42px);
 }
 
 .enhanced-site .premium-gallery-copy strong {
@@ -1986,6 +2043,10 @@
 
   .enhanced-site .premium-gallery-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .enhanced-site .premium-gallery-summary {
+    grid-template-columns: 1fr;
   }
 
   .enhanced-site .premium-gallery-card,
@@ -2098,6 +2159,11 @@
 
   .enhanced-site .premium-gallery-feature {
     min-height: 430px;
+  }
+
+  .enhanced-site .premium-gallery-summary article {
+    min-height: auto;
+    padding: 20px;
   }
 
   .enhanced-site .premium-gallery-feature figcaption {

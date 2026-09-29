@@ -128,6 +128,12 @@ const FEATURE = {
   detail: "A calm clinical setting for laser and skin-wellness planning in a teal premium direction.",
 };
 
+const SUMMARY = [
+  ["01", "Consultation-led", "Every pathway begins with skin type, comfort and suitability."],
+  ["02", "Area-specific", "Sessions are planned around the treatment area and hair pattern."],
+  ["03", "Clear expectations", "Comfort, spacing and maintenance are explained before starting."],
+] as const;
+
 const CASES = [
   {
     image: beforeAfterFace,
@@ -207,6 +213,16 @@ export function BeforeAfterGallery() {
             <span>Premium care</span>
           </div>
         </header>
+
+        <div className="premium-gallery-summary" aria-label="Laser care planning principles">
+          {SUMMARY.map(([count, title, detail]) => (
+            <article key={title}>
+              <span>{count}</span>
+              <strong>{title}</strong>
+              <p>{detail}</p>
+            </article>
+          ))}
+        </div>
 
         <figure className="premium-gallery-feature">
           <img src={FEATURE.image} alt={FEATURE.title} loading="lazy" draggable="false" />
