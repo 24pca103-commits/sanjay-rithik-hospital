@@ -1,11 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Comparison } from "@/comparison/Comparison";
+import { LandingPage } from "@/components/landing/LandingPage";
+
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [
-    { title: "Dermatologist in Karur | Sanjay Rithik Hospital" },
-    { name: "description", content: "Consult a dermatologist at Sanjay Rithik Hospital, Karur, for acne, pigmentation, hair loss, sensitive skin, scars, ageing skin and other skin concerns." },
-    { property: "og:title", content: "Dermatology Care in Karur | Sanjay Rithik Hospital" },
-    { property: "og:description", content: "Personalised dermatology care for acne, pigmentation, hair and scalp concerns, sensitive skin, scars, ageing skin and more at Sanjay Rithik Hospital, Karur." },
-  ] }),
-  component: Comparison,
+  head: () => ({
+    meta: [
+      { title: "Dermatologist in Karur | Sanjay Rithik Hospital" },
+      {
+        name: "description",
+        content:
+          "Specialist dermatology, hair restoration and US-FDA laser cosmetology in Karur under Dr. S. Kiruthika at Sanjay Rithik Hospital. Acne, melasma, scars, hair fall & glowing skin.",
+      },
+      { property: "og:title", content: "Dermatology & Laser Cosmetology in Karur | Sanjay Rithik Hospital" },
+      {
+        property: "og:description",
+        content:
+          "Doctor-led clinical treatments for acne, pigmentation, hair fall, scars, and anti-aging at Sanjay Rithik Hospital, Karur.",
+      },
+    ],
+  }),
+  component: LandingPage,
 });
