@@ -1,4 +1,4 @@
-import { useState, useRef, useId } from "react";
+import { useState, useRef, useEffect, useId } from "react";
 import {
   Phone,
   MessageCircle,
@@ -10,6 +10,7 @@ import {
   Award,
   Sparkles,
   ChevronRight,
+  ChevronLeft,
   CheckCircle2,
   Stethoscope,
   HeartHandshake,
@@ -276,6 +277,36 @@ export function LandingPage() {
   const [formDate, setFormDate] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Reviews Carousel State & Auto-Scroll Logic
+  const reviewsContainerRef = useRef<HTMLDivElement | null>(null);
+  const [isReviewsAutoScrolling, setIsReviewsAutoScrolling] = useState(true);
+
+  useEffect(() => {
+    if (!isReviewsAutoScrolling) return;
+    const interval = setInterval(() => {
+      const container = reviewsContainerRef.current;
+      if (!container) return;
+      const card = container.firstElementChild as HTMLElement | null;
+      const cardWidth = card ? card.offsetWidth + 16 : 340;
+      const isEnd = container.scrollLeft + container.clientWidth >= container.scrollWidth - 12;
+      if (isEnd) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollBy({ left: cardWidth, behavior: "smooth" });
+      }
+    }, 3800);
+    return () => clearInterval(interval);
+  }, [isReviewsAutoScrolling]);
+
+  const handleReviewScroll = (direction: "left" | "right") => {
+    const container = reviewsContainerRef.current;
+    if (!container) return;
+    const card = container.firstElementChild as HTMLElement | null;
+    const cardWidth = card ? card.offsetWidth + 16 : 340;
+    const delta = direction === "left" ? -cardWidth : cardWidth;
+    container.scrollBy({ left: delta, behavior: "smooth" });
+  };
+
   const toggleVideo = () => {
     if (videoRef.current) {
       if (isVideoPlaying) {
@@ -341,36 +372,28 @@ export function LandingPage() {
 
   return (
     <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#faf8f5] text-[#241c18] font-sans antialiased selection:bg-[#0088b6]/20 selection:text-[#0088b6]">
-      {/* Top Notification Bar */}
-      <div className="bg-[#1a1412] text-[#fff8fc] text-xs py-2 px-3 sm:px-4 border-b border-white/10 w-full overflow-hidden">
+      {/* Top Notification Bar (Logo Theme Based with Prominent Phone Number) */}
+      <div className="bg-[#052633] text-[#e8f7fa] text-xs py-2 px-3 sm:px-4 border-b border-[#0b3b4d] w-full overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-1.5 sm:gap-2">
           <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-            <span className="flex items-center gap-1.5 font-medium text-[#f1e7dc] text-[11px] sm:text-xs truncate">
-              <MapPin className="w-3.5 h-3.5 text-[#0088b6] shrink-0" />
+            <span className="flex items-center gap-1.5 font-medium text-[#c6e7ee] text-[11px] sm:text-xs truncate">
+              <MapPin className="w-3.5 h-3.5 text-[#38bdf8] shrink-0" />
               <span className="truncate">77A, Sengunthapuram Main Road, Karur</span>
             </span>
             <span className="hidden sm:inline-block text-white/30">•</span>
-            <span className="hidden sm:flex items-center gap-1 text-[#f1e7dc]/80">
-              <Clock className="w-3.5 h-3.5 text-[#0088b6] shrink-0" />
+            <span className="hidden sm:flex items-center gap-1 text-[#98dbe3]">
+              <Clock className="w-3.5 h-3.5 text-[#38bdf8] shrink-0" />
               Mon–Sat: 9 AM–8 PM · 24x7 Emergency
             </span>
           </div>
-          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+          <div className="flex items-center gap-2 shrink-0">
+            <span className="hidden xs:inline text-[#98dbe3] text-[11px] font-medium">Appointments & Helpline:</span>
             <a
               href={CLINIC_PHONE_LINK}
-              className="flex items-center gap-1 text-[#f1e7dc] hover:text-[#0088b6] transition-colors text-[11px] sm:text-xs"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#0088b6]/25 hover:bg-[#0088b6]/40 text-white font-bold text-xs sm:text-sm transition-all border border-[#0088b6]/40 shadow-xs"
             >
-              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0088b6] shrink-0" />
-              <span className="font-semibold">{CLINIC_PHONE}</span>
-            </a>
-            <a
-              href={CLINIC_WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] px-2 py-0.5 rounded-full font-semibold flex items-center gap-1 transition-colors text-[10px] sm:text-xs"
-            >
-              <MessageCircle className="w-3 h-3 shrink-0" />
-              WhatsApp Us
+              <Phone className="w-3.5 h-3.5 text-[#38bdf8] shrink-0" />
+              <span>{CLINIC_PHONE}</span>
             </a>
           </div>
         </div>
@@ -581,25 +604,46 @@ export function LandingPage() {
                   </div>
                 </div>
 
-                {/* Floating Badge 1: 15+ Years Trust (Overflow-safe on mobile) */}
-                <div className="absolute top-2 left-2 sm:-top-4 sm:-left-4 bg-white/95 backdrop-blur-md p-2.5 sm:p-3.5 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-2.5 sm:gap-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#0088b6]/10 flex items-center justify-center text-[#0088b6]">
-                    <Award className="w-4 h-4 sm:w-5 sm:h-5" />
+                {/* Floating Badges for Desktop (Never overlapping on mobile) */}
+                <div className="hidden sm:flex absolute -top-4 -left-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-[#e7ddd3] items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#0088b6]/10 flex items-center justify-center text-[#0088b6]">
+                    <Award className="w-5 h-5" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#1a1412]">15+ Years</p>
-                    <p className="text-[10px] sm:text-[11px] text-[#746961]">Hospital Excellence</p>
+                    <p className="text-[11px] text-[#746961]">Hospital Excellence</p>
                   </div>
                 </div>
 
-                {/* Floating Badge 2: Modern Lasers (Overflow-safe on mobile) */}
-                <div className="absolute bottom-20 sm:bottom-auto sm:-bottom-4 right-2 sm:-right-4 bg-white/95 backdrop-blur-md p-2.5 sm:p-3.5 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-2.5 sm:gap-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366]">
-                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
+                <div className="hidden sm:flex absolute -bottom-4 -right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-[#e7ddd3] items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366]">
+                    <Sparkles className="w-5 h-5" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#1a1412]">FDA-Approved</p>
-                    <p className="text-[10px] sm:text-[11px] text-[#746961]">Cosmetology Tech</p>
+                    <p className="text-[11px] text-[#746961]">Cosmetology Tech</p>
+                  </div>
+                </div>
+
+                {/* Mobile-Only Trust Strip (Cleanly placed below hero image - zero overlap) */}
+                <div className="mt-3 grid grid-cols-2 gap-2 sm:hidden">
+                  <div className="bg-white/95 p-2.5 rounded-xl shadow-md border border-[#e7ddd3] flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-[#0088b6]/10 flex items-center justify-center text-[#0088b6] shrink-0">
+                      <Award className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-[#1a1412]">15+ Years</p>
+                      <p className="text-[10px] text-[#746961]">Hospital Excellence</p>
+                    </div>
+                  </div>
+                  <div className="bg-white/95 p-2.5 rounded-xl shadow-md border border-[#e7ddd3] flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-[#25D366]/10 flex items-center justify-center text-[#25D366] shrink-0">
+                      <Sparkles className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-[#1a1412]">FDA-Approved</p>
+                      <p className="text-[10px] text-[#746961]">Cosmetology Tech</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -718,24 +762,24 @@ export function LandingPage() {
                   </p>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-3 pt-2">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 w-full">
                   <a
                     href={`https://wa.me/918903009723?text=${encodeURIComponent(
                       `Hi Dr. Kiruthika, I am interested in treatment for ${currentConcernData.name} at Sanjay Rithik Hospital, Karur.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-white font-semibold text-sm flex items-center gap-2 shadow-sm"
+                    className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold text-sm flex items-center justify-center text-center gap-2 shadow-md shadow-[#25D366]/20 transition-all"
                   >
-                    <MessageCircle className="w-4 h-4" />
-                    Discuss {currentConcernData.name} on WhatsApp
+                    <MessageCircle className="w-4 h-4 shrink-0" />
+                    <span>Consult Doctor on WhatsApp</span>
                   </a>
                   <a
                     href="#booking"
-                    className="px-6 py-3 rounded-xl bg-[#1a1412] hover:bg-black text-white font-semibold text-sm flex items-center gap-2 shadow-sm"
+                    className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0088b6] hover:bg-[#007096] text-white font-bold text-sm flex items-center justify-center text-center gap-2 shadow-md shadow-[#0088b6]/20 transition-all"
                   >
-                    <Calendar className="w-4 h-4" />
-                    Book Doctor Consultation
+                    <Calendar className="w-4 h-4 shrink-0" />
+                    <span>Book Hospital Consultation</span>
                   </a>
                 </div>
               </div>
@@ -1075,15 +1119,15 @@ export function LandingPage() {
                   </p>
                 </div>
 
-                <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full">
                   <a
                     href={getQuizWhatsAppText()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-white font-semibold text-center flex items-center justify-center gap-2 shadow-md shadow-[#25D366]/20"
+                    className="w-full sm:flex-1 py-3.5 px-5 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold text-sm text-center flex items-center justify-center gap-2 shadow-md shadow-[#25D366]/20 transition-all"
                   >
-                    <MessageCircle className="w-5 h-5" />
-                    Send This Result on WhatsApp to Dr. Kiruthika
+                    <MessageCircle className="w-5 h-5 shrink-0" />
+                    <span>Send Result to Doctor on WhatsApp</span>
                   </a>
                   <button
                     onClick={() => {
@@ -1124,14 +1168,14 @@ export function LandingPage() {
                 </div>
               </div>
 
-              {/* Verified Trust Stamp (Overflow-safe on mobile) */}
-              <div className="absolute bottom-3 right-3 sm:-bottom-5 sm:-right-5 bg-white p-3 sm:p-4 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-2.5 sm:gap-3">
-                <div className="w-12 h-12 rounded-xl bg-[#0088b6]/10 flex items-center justify-center text-[#0088b6]">
-                  <Stethoscope className="w-6 h-6" />
+              {/* Verified Trust Stamp (Below photo on mobile, overlapping on desktop - NEVER covers doctor's name) */}
+              <div className="mt-3 sm:mt-0 sm:absolute sm:-bottom-5 sm:-right-5 bg-white p-3 sm:p-4 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-2.5 sm:gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#0088b6]/10 flex items-center justify-center text-[#0088b6] shrink-0">
+                  <Stethoscope className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-[#1a1412]">Assessment-First</p>
-                  <p className="text-xs text-[#746961]">No Unnecessary Procedures</p>
+                  <p className="text-sm font-bold text-[#1a1412]">Assessment-First Protocol</p>
+                  <p className="text-xs text-[#746961]">No Unnecessary Procedures · Root-Cause Care</p>
                 </div>
               </div>
             </div>
@@ -1190,23 +1234,23 @@ export function LandingPage() {
                 </div>
               </div>
 
-              {/* Consultation Buttons */}
-              <div className="pt-4 flex flex-wrap items-center gap-4">
+              {/* Consultation Buttons (Full Width Centered on Mobile) */}
+              <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full">
                 <a
                   href={CLINIC_WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-white font-semibold text-sm flex items-center gap-2 shadow-sm"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold text-sm flex items-center justify-center text-center gap-2 shadow-md shadow-[#25D366]/20 transition-all"
                 >
-                  <MessageCircle className="w-4 h-4" />
-                  Book with Dr. Kiruthika on WhatsApp
+                  <MessageCircle className="w-4 h-4 shrink-0" />
+                  <span>Book with Doctor on WhatsApp</span>
                 </a>
                 <a
                   href="#booking"
-                  className="px-6 py-3.5 rounded-xl bg-[#1a1412] hover:bg-black text-white font-semibold text-sm flex items-center gap-2 shadow-sm"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#0088b6] hover:bg-[#007096] text-white font-bold text-sm flex items-center justify-center text-center gap-2 shadow-md shadow-[#0088b6]/20 transition-all"
                 >
-                  <Calendar className="w-4 h-4" />
-                  Schedule In-Person Consultation
+                  <Calendar className="w-4 h-4 shrink-0" />
+                  <span>Schedule Clinic Visit</span>
                 </a>
               </div>
             </div>
@@ -1324,12 +1368,48 @@ export function LandingPage() {
             </div>
           </div>
 
-          {/* Testimonial Cards */}
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Testimonial Section Header with Manual Scroll Navigation Controls */}
+          <div className="mt-14 flex items-center justify-between pb-2">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0088b6] block">
+                Google Verified Patient Feedback
+              </span>
+              <p className="text-xs sm:text-sm text-[#746961]">
+                Real Karur Patients · 4.5 ★ Rating (440+ Google Reviews)
+              </p>
+            </div>
+            {/* Manual Scroll Controls */}
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => handleReviewScroll("left")}
+                aria-label="Previous reviews"
+                className="w-9 h-9 rounded-full bg-white border border-[#e7ddd3] hover:border-[#0088b6] text-[#1a1412] hover:text-[#0088b6] flex items-center justify-center transition-all shadow-xs active:scale-95"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => handleReviewScroll("right")}
+                aria-label="Next reviews"
+                className="w-9 h-9 rounded-full bg-white border border-[#e7ddd3] hover:border-[#0088b6] text-[#1a1412] hover:text-[#0088b6] flex items-center justify-center transition-all shadow-xs active:scale-95"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* Single-Line Horizontal Carousel with Auto-Scroll & Touch/Mouse Manual Scroll */}
+          <div
+            ref={reviewsContainerRef}
+            onMouseEnter={() => setIsReviewsAutoScrolling(false)}
+            onMouseLeave={() => setIsReviewsAutoScrolling(true)}
+            onTouchStart={() => setIsReviewsAutoScrolling(false)}
+            onTouchEnd={() => setIsReviewsAutoScrolling(true)}
+            className="mt-4 flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-4 sm:gap-6 pb-3 w-full max-w-full scroll-smooth"
+          >
             {testimonials.map((review, idx) => (
               <div
                 key={idx}
-                className="bg-white p-6 rounded-2xl border border-[#e7ddd3] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
+                className="w-[85vw] max-w-[340px] sm:max-w-[380px] shrink-0 snap-center bg-white p-5 sm:p-6 rounded-2xl border border-[#e7ddd3] shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
               >
                 <div className="space-y-3">
                   <div className="flex text-[#ffb703]">
@@ -1337,7 +1417,7 @@ export function LandingPage() {
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
-                  <p className="text-sm text-[#4a3f38] leading-relaxed italic">
+                  <p className="text-xs sm:text-sm text-[#4a3f38] leading-relaxed italic line-clamp-5">
                     &ldquo;{review.quote}&rdquo;
                   </p>
                 </div>
@@ -1353,6 +1433,11 @@ export function LandingPage() {
               </div>
             ))}
           </div>
+
+          {/* Swipe Hint Indicator on Mobile */}
+          <p className="text-center text-[11px] text-[#746961] mt-2 sm:hidden flex items-center justify-center gap-1.5">
+            <span>← Swipe horizontally to read all reviews →</span>
+          </p>
         </div>
       </section>
 
@@ -1661,52 +1746,64 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-[#1a1412] text-[#fff8fc] pt-12 sm:pt-14 pb-28 sm:pb-14 border-t border-white/10 overflow-hidden w-full max-w-full">
+      {/* THEME-BASED FOOTER */}
+      <footer className="bg-gradient-to-b from-[#052633] via-[#041d27] to-[#02131a] text-[#f1f9fb] pt-14 pb-28 sm:pb-16 border-t border-[#0b4255] overflow-hidden w-full max-w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="space-y-3 md:col-span-2">
+            <div className="space-y-4 md:col-span-2">
               <div className="flex items-center gap-3">
-                <img
-                  src={hospitalLogo}
-                  alt="Sanjay Rithik Hospital"
-                  className="h-10 w-auto brightness-0 invert"
-                />
-                <span className="font-serif font-bold text-lg text-white">
-                  Sanjay Rithik Hospital
-                </span>
+                <div className="bg-white p-2 rounded-2xl shadow-sm inline-flex items-center justify-center shrink-0">
+                  <img
+                    src={hospitalLogo}
+                    alt="Sanjay Rithik Hospital Logo"
+                    className="h-9 sm:h-10 w-auto object-contain"
+                  />
+                </div>
+                <div>
+                  <span className="font-serif font-bold text-lg sm:text-xl text-white block">
+                    Sanjay Rithik Hospital
+                  </span>
+                  <span className="text-[11px] text-[#38bdf8] font-semibold uppercase tracking-wider block">
+                    Dermatology & Laser Cosmetology · Karur
+                  </span>
+                </div>
               </div>
-              <p className="text-xs text-white/70 max-w-sm leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#c6e7ee] max-w-sm leading-relaxed">
                 Specialist Dermatology, Hair Restoration & Aesthetic Laser Cosmetology in Karur. Guided by Dr. S. Kiruthika with advanced clinical protocols and compassionate patient care.
               </p>
-              <p className="text-xs text-[#38bdf8] font-semibold">
-                77A, Sengunthapuram Main Road, Karur 639002 • {CLINIC_PHONE}
-              </p>
+              <div className="flex items-center gap-2 text-xs text-[#98dbe3] font-medium pt-1">
+                <MapPin className="w-4 h-4 text-[#38bdf8] shrink-0" />
+                <span>77A, Sengunthapuram Main Road, Karur 639002</span>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-[#38bdf8] font-bold">
+                <Phone className="w-4 h-4 text-[#38bdf8] shrink-0" />
+                <span>{CLINIC_PHONE}</span>
+              </div>
             </div>
 
             <div className="space-y-2 text-xs">
-              <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-3">
+              <h4 className="font-bold uppercase tracking-wider text-sm mb-3 text-[#38bdf8]">
                 Key Services
               </h4>
-              <p><a href="#treatments" className="text-white/70 hover:text-[#38bdf8]">Acne & Scar Laser Resurfacing</a></p>
-              <p><a href="#treatments" className="text-white/70 hover:text-[#38bdf8]">Pigmentation & Melasma Removal</a></p>
-              <p><a href="#treatments" className="text-white/70 hover:text-[#38bdf8]">GFC & PRP Hair Fall Therapy</a></p>
-              <p><a href="#treatments" className="text-white/70 hover:text-[#38bdf8]">Hydrafacial & Medi-Glow Peels</a></p>
-              <p><a href="#treatments" className="text-white/70 hover:text-[#38bdf8]">Permanent Laser Hair Reduction</a></p>
+              <p><a href="#treatments" className="text-[#c6e7ee] hover:text-white transition-colors">Acne & Scar Laser Resurfacing</a></p>
+              <p><a href="#treatments" className="text-[#c6e7ee] hover:text-white transition-colors">Pigmentation & Melasma Removal</a></p>
+              <p><a href="#treatments" className="text-[#c6e7ee] hover:text-white transition-colors">GFC & PRP Hair Fall Therapy</a></p>
+              <p><a href="#treatments" className="text-[#c6e7ee] hover:text-white transition-colors">Hydrafacial & Medi-Glow Peels</a></p>
+              <p><a href="#treatments" className="text-[#c6e7ee] hover:text-white transition-colors">Permanent Laser Hair Reduction</a></p>
             </div>
 
             <div className="space-y-2 text-xs">
-              <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-3">
+              <h4 className="font-bold uppercase tracking-wider text-sm mb-3 text-[#38bdf8]">
                 Patient Actions
               </h4>
-              <p><a href={CLINIC_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#38bdf8]">Instant WhatsApp Consultation</a></p>
-              <p><a href={CLINIC_PHONE_LINK} className="text-white/70 hover:text-[#38bdf8]">Call {CLINIC_PHONE}</a></p>
-              <p><a href="#assessment" className="text-white/70 hover:text-[#38bdf8]">Take 2-Min Skin Check</a></p>
-              <p><a href={GOOGLE_MAPS_LINK} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#38bdf8]">Google Maps Directions</a></p>
+              <p><a href={CLINIC_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-[#c6e7ee] hover:text-[#25D366] transition-colors flex items-center gap-1.5"><MessageCircle className="w-3.5 h-3.5 text-[#25D366]" /> Instant WhatsApp Consultation</a></p>
+              <p><a href={CLINIC_PHONE_LINK} className="text-[#c6e7ee] hover:text-white transition-colors flex items-center gap-1.5"><Phone className="w-3.5 h-3.5 text-[#38bdf8]" /> Call {CLINIC_PHONE}</a></p>
+              <p><a href="#assessment" className="text-[#c6e7ee] hover:text-white transition-colors flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5 text-[#38bdf8]" /> Take 2-Min Skin Check</a></p>
+              <p><a href={GOOGLE_MAPS_LINK} target="_blank" rel="noopener noreferrer" className="text-[#c6e7ee] hover:text-white transition-colors flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-[#38bdf8]" /> Google Maps Directions</a></p>
             </div>
           </div>
 
-          <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
+          <div className="mt-12 pt-6 border-t border-[#0b4255] flex flex-col sm:flex-row items-center justify-between text-xs text-[#8ab9c4] gap-4">
             <p>© {new Date().getFullYear()} Sanjay Rithik Hospital. All rights reserved.</p>
             <p className="text-center sm:text-right">
               Medical Disclaimer: Information on this site is for educational purposes. Consult our dermatologist for personal medical advice.
@@ -1728,7 +1825,7 @@ export function LandingPage() {
         </a>
         <a
           href={CLINIC_PHONE_LINK}
-          className="flex-1 py-3 rounded-xl bg-[#1a1412] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md"
+          className="flex-1 py-3 rounded-xl bg-[#006583] hover:bg-[#00526b] text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md transition-colors"
         >
           <Phone className="w-4 h-4" />
           Call Clinic
