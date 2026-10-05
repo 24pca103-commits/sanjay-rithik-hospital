@@ -378,24 +378,24 @@ export function LandingPage() {
 
       {/* High-Converting Minimalist Digital Marketing Header */}
       <header className="sticky top-0 z-40 bg-[#faf8f5]/95 backdrop-blur-md border-b border-[#e7ddd3]/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
           {/* Logo & Hospital Identity */}
-          <a href="#" className="flex items-center gap-3 shrink-0 group">
+          <a href="#" className="flex items-center gap-2 sm:gap-3 shrink-0 group">
             <img
               src={hospitalLogo}
               alt="Sanjay Rithik Hospital Logo"
-              className="h-11 sm:h-12 w-auto object-contain shrink-0 transition-transform group-hover:scale-105"
+              className="h-9 sm:h-11 md:h-12 w-auto object-contain shrink-0 transition-transform group-hover:scale-105"
             />
             <div className="flex flex-col justify-center shrink-0">
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-base sm:text-lg tracking-tight text-[#1a1412] font-serif whitespace-nowrap">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="font-bold text-sm sm:text-base md:text-lg tracking-tight text-[#1a1412] font-serif whitespace-nowrap">
                   Sanjay Rithik Hospital
                 </span>
-                <span className="shrink-0 bg-[#0088b6]/10 text-[#0088b6] text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full whitespace-nowrap">
+                <span className="hidden xs:inline-flex shrink-0 bg-[#0088b6]/10 text-[#0088b6] text-[9px] sm:text-[10px] uppercase font-bold tracking-wider px-1.5 sm:px-2 py-0.5 rounded-full whitespace-nowrap">
                   Dermatology
                 </span>
               </div>
-              <span className="text-[11px] sm:text-xs text-[#746961] font-medium whitespace-nowrap mt-0.5">
+              <span className="hidden sm:block text-[11px] sm:text-xs text-[#746961] font-medium whitespace-nowrap mt-0.5">
                 Skin Laser & Cosmetology Centre · Karur
               </span>
             </div>
@@ -415,11 +415,11 @@ export function LandingPage() {
           </div>
 
           {/* Direct Conversion Actions (Zero Distraction / High Intent) */}
-          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             {/* Phone Call Button */}
             <a
               href={CLINIC_PHONE_LINK}
-              className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-[#d6c7b8] text-[#1a1412] bg-white hover:bg-[#f1e7dc]/40 font-bold text-xs sm:text-sm transition-all shadow-xs shrink-0"
+              className="hidden sm:inline-flex whitespace-nowrap items-center justify-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-[#d6c7b8] text-[#1a1412] bg-white hover:bg-[#f1e7dc]/40 font-bold text-xs sm:text-sm transition-all shadow-xs shrink-0"
             >
               <Phone className="w-4 h-4 text-[#0088b6] shrink-0" />
               <span className="hidden md:inline">{CLINIC_PHONE}</span>
@@ -431,7 +431,7 @@ export function LandingPage() {
               href={CLINIC_WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-[#25D366]/40 text-[#128C7E] bg-[#25D366]/10 hover:bg-[#25D366]/20 font-bold text-xs sm:text-sm transition-all shadow-xs shrink-0"
+              className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-[#25D366]/40 text-[#128C7E] bg-[#25D366]/10 hover:bg-[#25D366]/20 font-bold text-xs sm:text-sm transition-all shadow-xs shrink-0"
             >
               <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
               <span>WhatsApp</span>
@@ -440,11 +440,10 @@ export function LandingPage() {
             {/* Primary Booking Button */}
             <a
               href="#booking"
-              className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-[#0088b6] hover:bg-[#007096] text-white font-bold text-xs sm:text-sm transition-all shadow-md shadow-[#0088b6]/25 hover:shadow-lg hover:shadow-[#0088b6]/35 shrink-0"
+              className="hidden md:inline-flex whitespace-nowrap items-center justify-center gap-1.5 px-4 lg:px-5 py-2 sm:py-2.5 rounded-xl bg-[#0088b6] hover:bg-[#007096] text-white font-bold text-xs sm:text-sm transition-all shadow-md shadow-[#0088b6]/25 hover:shadow-lg hover:shadow-[#0088b6]/35 shrink-0"
             >
               <Calendar className="w-4 h-4 shrink-0" />
-              <span className="hidden sm:inline">Book Appointment</span>
-              <span className="sm:hidden">Book</span>
+              <span>Book Appointment</span>
             </a>
           </div>
         </div>
@@ -469,7 +468,7 @@ export function LandingPage() {
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#1a1412] leading-[1.12] tracking-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-[#1a1412] leading-[1.14] tracking-tight">
                 Clear Skin, Healthy Hair &{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0088b6] to-[#006583]">
                   Youthful Radiance.
@@ -478,13 +477,13 @@ export function LandingPage() {
               </h1>
 
               {/* Subtitle */}
-              <p className="text-lg sm:text-xl text-[#5c5048] leading-relaxed max-w-2xl">
+              <p className="text-base sm:text-xl text-[#5c5048] leading-relaxed max-w-2xl">
                 Personalized, doctor-led clinical solutions for acne, stubborn pigmentation, acne scars, hair thinning, and age-defying skin rejuvenation under{" "}
                 <strong className="text-[#1a1412] font-semibold">Dr. S. Kiruthika</strong> at Sanjay Rithik Hospital, Karur.
               </p>
 
               {/* Trust Checkmarks */}
-              <div className="grid grid-cols-2 gap-3 pt-2 text-sm text-[#3e342e]">
+              <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-3 pt-2 text-xs sm:text-sm text-[#3e342e]">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#0088b6] flex-shrink-0" />
                   <span>Dermatologist Consultation</span>
@@ -504,19 +503,19 @@ export function LandingPage() {
               </div>
 
               {/* Primary Call-to-Actions */}
-              <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+              <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5">
                 <a
                   href={CLINIC_WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-7 py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-white font-semibold text-base transition-all shadow-lg shadow-[#25D366]/25 hover:shadow-xl hover:shadow-[#25D366]/35 flex items-center justify-center gap-2 group"
+                  className="px-5 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-white font-semibold text-sm sm:text-base transition-all shadow-lg shadow-[#25D366]/25 hover:shadow-xl hover:shadow-[#25D366]/35 flex items-center justify-center gap-2 group"
                 >
                   <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" />
                   <span>Chat with Doctor on WhatsApp</span>
                 </a>
                 <a
                   href={CLINIC_PHONE_LINK}
-                  className="px-6 py-4 rounded-xl bg-white hover:bg-[#f1e7dc]/40 text-[#1a1412] border border-[#d6c7b8] font-semibold text-base transition-all shadow-sm flex items-center justify-center gap-2"
+                  className="px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-white hover:bg-[#f1e7dc]/40 text-[#1a1412] border border-[#d6c7b8] font-semibold text-sm sm:text-base transition-all shadow-sm flex items-center justify-center gap-2"
                 >
                   <Phone className="w-5 h-5 text-[#0088b6]" />
                   <span>Call {CLINIC_PHONE}</span>
@@ -524,7 +523,7 @@ export function LandingPage() {
               </div>
 
               {/* Secondary Quiz Action Link */}
-              <div className="pt-1 flex items-center gap-2 text-sm text-[#746961]">
+              <div className="pt-1 flex items-center gap-2 text-xs sm:text-sm text-[#746961]">
                 <span>Not sure what you need?</span>
                 <a
                   href="#assessment"
@@ -536,17 +535,17 @@ export function LandingPage() {
               </div>
 
               {/* Social Proof Strip */}
-              <div className="pt-4 border-t border-[#e7ddd3] flex flex-wrap items-center gap-6">
+              <div className="pt-4 border-t border-[#e7ddd3] flex flex-wrap items-center gap-4 sm:gap-6">
                 <div className="flex items-center gap-1.5">
                   <div className="flex text-[#ffb703]">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
+                      <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" />
                     ))}
                   </div>
-                  <span className="font-bold text-[#1a1412] text-sm ml-1">4.5 / 5.0</span>
-                  <span className="text-xs text-[#746961]">(440+ Google Reviews)</span>
+                  <span className="font-bold text-[#1a1412] text-xs sm:text-sm ml-1">4.5 / 5.0</span>
+                  <span className="text-[11px] sm:text-xs text-[#746961]">(440+ Google Reviews)</span>
                 </div>
-                <div className="text-xs text-[#746961] flex items-center gap-1.5">
+                <div className="text-[11px] sm:text-xs text-[#746961] flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-[#0088b6]" />
                   <span>Karur&apos;s Landmark Healthcare Facility</span>
                 </div>
@@ -554,53 +553,53 @@ export function LandingPage() {
             </div>
 
             {/* Right Visual Collage */}
-            <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-5 relative mt-4 lg:mt-0">
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 {/* Main Hero Card with Doctor and Suite */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
                   <img
                     src={heroImage}
                     alt="Skin and aesthetic consultation at Sanjay Rithik Hospital Karur"
-                    className="w-full h-[440px] sm:h-[480px] object-cover object-center"
+                    className="w-full h-[360px] sm:h-[440px] md:h-[480px] object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   
                   {/* Doctor Highlight Tag on Image */}
-                  <div className="absolute bottom-5 left-5 right-5 text-white p-4 rounded-2xl bg-black/40 backdrop-blur-md border border-white/20">
+                  <div className="absolute bottom-3 sm:bottom-5 left-3 sm:left-5 right-3 sm:right-5 text-white p-3 sm:p-4 rounded-2xl bg-black/50 backdrop-blur-md border border-white/20">
                     <div className="flex items-center gap-3">
                       <img
                         src={doctorKiruthika}
                         alt="Dr. S. Kiruthika Dermatologist"
-                        className="w-12 h-12 rounded-full object-cover border-2 border-[#0088b6]"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border-2 border-[#0088b6]"
                       />
                       <div>
-                        <h4 className="font-bold text-white text-base">Dr. S. Kiruthika</h4>
-                        <p className="text-xs text-white/80">Consultant Dermatologist & Cosmetologist</p>
-                        <p className="text-[11px] text-[#38bdf8] font-medium mt-0.5">Sanjay Rithik Hospital, Karur</p>
+                        <h4 className="font-bold text-white text-sm sm:text-base">Dr. S. Kiruthika</h4>
+                        <p className="text-[11px] sm:text-xs text-white/80">Consultant Dermatologist & Cosmetologist</p>
+                        <p className="text-[10px] sm:text-[11px] text-[#38bdf8] font-medium mt-0.5">Sanjay Rithik Hospital, Karur</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Floating Badge 1: 15+ Years Trust */}
-                <div className="absolute -top-4 -left-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#0088b6]/10 flex items-center justify-center text-[#0088b6]">
-                    <Award className="w-5 h-5" />
+                {/* Floating Badge 1: 15+ Years Trust (Overflow-safe on mobile) */}
+                <div className="absolute top-2 left-2 sm:-top-4 sm:-left-4 bg-white/95 backdrop-blur-md p-2.5 sm:p-3.5 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-2.5 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#0088b6]/10 flex items-center justify-center text-[#0088b6]">
+                    <Award className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#1a1412]">15+ Years</p>
-                    <p className="text-[11px] text-[#746961]">Hospital Excellence</p>
+                    <p className="text-[10px] sm:text-[11px] text-[#746961]">Hospital Excellence</p>
                   </div>
                 </div>
 
-                {/* Floating Badge 2: Modern Lasers */}
-                <div className="absolute -bottom-4 -right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366]">
-                    <Sparkles className="w-5 h-5" />
+                {/* Floating Badge 2: Modern Lasers (Overflow-safe on mobile) */}
+                <div className="absolute bottom-20 sm:bottom-auto sm:-bottom-4 right-2 sm:-right-4 bg-white/95 backdrop-blur-md p-2.5 sm:p-3.5 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-2.5 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#25D366]/10 flex items-center justify-center text-[#25D366]">
+                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#1a1412]">FDA-Approved</p>
-                    <p className="text-[11px] text-[#746961]">Cosmetology Tech</p>
+                    <p className="text-[10px] sm:text-[11px] text-[#746961]">Cosmetology Tech</p>
                   </div>
                 </div>
               </div>
@@ -610,24 +609,24 @@ export function LandingPage() {
       </section>
 
       {/* QUICK FACTS / TRUST STRIP */}
-      <section className="bg-white border-y border-[#e7ddd3] py-8">
+      <section className="bg-white border-y border-[#e7ddd3] py-6 sm:py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x-0 md:divide-x divide-[#e7ddd3]">
-            <div className="px-4">
-              <p className="text-3xl font-serif font-bold text-[#0088b6]">12,000+</p>
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#746961] mt-1">Patients Treated</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center divide-x-0 lg:divide-x divide-[#e7ddd3]">
+            <div className="p-2 sm:px-4">
+              <p className="text-2xl sm:text-3xl font-serif font-bold text-[#0088b6]">12,000+</p>
+              <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#746961] mt-1">Patients Treated</p>
             </div>
-            <div className="px-4">
-              <p className="text-3xl font-serif font-bold text-[#1a1412]">4.5 ★</p>
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#746961] mt-1">440+ Google Reviews</p>
+            <div className="p-2 sm:px-4">
+              <p className="text-2xl sm:text-3xl font-serif font-bold text-[#1a1412]">4.5 ★</p>
+              <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#746961] mt-1">440+ Google Reviews</p>
             </div>
-            <div className="px-4">
-              <p className="text-3xl font-serif font-bold text-[#0088b6]">100%</p>
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#746961] mt-1">Doctor-Led Care</p>
+            <div className="p-2 sm:px-4">
+              <p className="text-2xl sm:text-3xl font-serif font-bold text-[#0088b6]">100%</p>
+              <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#746961] mt-1">Doctor-Led Care</p>
             </div>
-            <div className="px-4">
-              <p className="text-3xl font-serif font-bold text-[#1a1412]">24x7</p>
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#746961] mt-1">Hospital Support</p>
+            <div className="p-2 sm:px-4">
+              <p className="text-2xl sm:text-3xl font-serif font-bold text-[#1a1412]">24x7</p>
+              <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-[#746961] mt-1">Hospital Support</p>
             </div>
           </div>
         </div>
@@ -649,12 +648,12 @@ export function LandingPage() {
           </div>
 
           {/* Interactive Concern Tabs/Buttons */}
-          <div className="mt-10 flex flex-wrap justify-center gap-2 sm:gap-3">
+          <div className="mt-8 sm:mt-10 flex overflow-x-auto no-scrollbar sm:flex-wrap sm:justify-center gap-2 sm:gap-3 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
             {SKIN_CONCERNS.map((concern) => (
               <button
                 key={concern.id}
                 onClick={() => setSelectedConcern(concern.id)}
-                className={`px-4 sm:px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all ${
+                className={`whitespace-nowrap sm:whitespace-normal shrink-0 px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all ${
                   selectedConcern === concern.id
                     ? "bg-[#0088b6] text-white shadow-md shadow-[#0088b6]/30 scale-105"
                     : "bg-white text-[#4a3f38] border border-[#e7ddd3] hover:border-[#0088b6]/50 hover:bg-[#f0f9fb]"
@@ -666,10 +665,10 @@ export function LandingPage() {
           </div>
 
           {/* Active Concern Detail Card */}
-          <div className="mt-10 bg-white rounded-3xl border border-[#e7ddd3] p-6 sm:p-10 shadow-xl transition-all">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="mt-8 sm:mt-10 bg-white rounded-2xl sm:rounded-3xl border border-[#e7ddd3] p-4 sm:p-6 lg:p-10 shadow-xl transition-all">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
               <div className="lg:col-span-5">
-                <div className="relative rounded-2xl overflow-hidden shadow-md h-72 sm:h-80">
+                <div className="relative rounded-2xl overflow-hidden shadow-md h-60 sm:h-72 lg:h-80">
                   <img
                     src={currentConcernData.image}
                     alt={currentConcernData.name}
@@ -761,7 +760,7 @@ export function LandingPage() {
           </div>
 
           {/* Department Tabs */}
-          <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="mt-8 sm:mt-12 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3">
             {TREATMENT_CATEGORIES.map((cat, idx) => {
               const Icon = cat.icon;
               const isActive = activeTab === idx;
@@ -871,7 +870,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="mt-10 bg-white rounded-3xl border border-[#e7ddd3] p-6 sm:p-10 shadow-xl">
+          <div className="mt-8 sm:mt-10 bg-white rounded-2xl sm:rounded-3xl border border-[#e7ddd3] p-4 sm:p-6 lg:p-10 shadow-xl">
             {/* Progress Bar */}
             <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#e7ddd3]">
               <span className="text-xs font-bold uppercase tracking-wider text-[#746961]">
@@ -1050,7 +1049,7 @@ export function LandingPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs bg-white p-4 rounded-xl border border-[#e7ddd3]">
+                <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-xs bg-white p-3.5 sm:p-4 rounded-xl border border-[#e7ddd3]">
                   <div>
                     <span className="text-[#746961] block">Concern:</span>
                     <strong className="text-[#1a1412] font-semibold">{quizConcern}</strong>
@@ -1112,21 +1111,21 @@ export function LandingPage() {
                 <img
                   src={doctorKiruthika}
                   alt="Dr. S. Kiruthika - Consultant Dermatologist Sanjay Rithik Hospital"
-                  className="w-full h-[460px] sm:h-[500px] object-cover object-top"
+                  className="w-full h-[360px] sm:h-[460px] lg:h-[500px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
+                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-white space-y-1">
                   <span className="text-xs font-bold uppercase tracking-widest text-[#38bdf8]">
                     Lead Dermatologist
                   </span>
-                  <h3 className="text-2xl font-serif font-bold text-white">Dr. S. Kiruthika</h3>
-                  <p className="text-sm text-white/90">Consultant Dermatologist & Cosmetologist</p>
-                  <p className="text-xs text-white/70">Sanjay Rithik Hospital, Karur</p>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">Dr. S. Kiruthika</h3>
+                  <p className="text-xs sm:text-sm text-white/90">Consultant Dermatologist & Cosmetologist</p>
+                  <p className="text-[11px] sm:text-xs text-white/70">Sanjay Rithik Hospital, Karur</p>
                 </div>
               </div>
 
-              {/* Verified Trust Stamp */}
-              <div className="absolute -bottom-5 -right-5 bg-white p-4 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-3">
+              {/* Verified Trust Stamp (Overflow-safe on mobile) */}
+              <div className="absolute bottom-3 right-3 sm:-bottom-5 sm:-right-5 bg-white p-3 sm:p-4 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-2.5 sm:gap-3">
                 <div className="w-12 h-12 rounded-xl bg-[#0088b6]/10 flex items-center justify-center text-[#0088b6]">
                   <Stethoscope className="w-6 h-6" />
                 </div>
@@ -1372,7 +1371,7 @@ export function LandingPage() {
             </p>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="mt-10 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4">
             {[
               {
                 step: "01",
@@ -1512,7 +1511,7 @@ export function LandingPage() {
                       placeholder="e.g. Priya Sharma"
                       value={formName}
                       onChange={(e) => setFormName(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6]"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-base sm:text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6] min-h-[48px]"
                     />
                   </div>
                   <div>
@@ -1525,7 +1524,7 @@ export function LandingPage() {
                       placeholder="e.g. 9876543210"
                       value={formPhone}
                       onChange={(e) => setFormPhone(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6]"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-base sm:text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6] min-h-[48px]"
                     />
                   </div>
                 </div>
@@ -1538,7 +1537,7 @@ export function LandingPage() {
                     <select
                       value={formConcern}
                       onChange={(e) => setFormConcern(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6]"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-base sm:text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6] min-h-[48px]"
                     >
                       <option value="Dermatology Consultation">General Skin / Dermatology</option>
                       <option value="Acne & Breakouts">Acne & Active Breakouts</option>
@@ -1559,7 +1558,7 @@ export function LandingPage() {
                       placeholder="e.g. Tomorrow Afternoon"
                       value={formDate}
                       onChange={(e) => setFormDate(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6]"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-base sm:text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6] min-h-[48px]"
                     />
                   </div>
                 </div>
@@ -1663,7 +1662,7 @@ export function LandingPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#1a1412] text-[#fff8fc] py-14 border-t border-white/10">
+      <footer className="bg-[#1a1412] text-[#fff8fc] pt-12 sm:pt-14 pb-28 sm:pb-14 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-3 md:col-span-2">
@@ -1716,8 +1715,8 @@ export function LandingPage() {
         </div>
       </footer>
 
-      {/* FLOATING ACTION BAR FOR MOBILE (Direct WhatsApp & Call) */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-[#e7ddd3] p-3 sm:hidden shadow-2xl flex items-center gap-2">
+      {/* FLOATING ACTION BAR FOR MOBILE (Direct WhatsApp & Call with Safe Area Support) */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-[#e7ddd3] px-3 pt-2.5 pb-[max(10px,env(safe-area-inset-bottom))] sm:hidden shadow-2xl flex items-center gap-2">
         <a
           href={CLINIC_WHATSAPP_LINK}
           target="_blank"
