@@ -340,36 +340,36 @@ export function LandingPage() {
   const currentConcernData = SKIN_CONCERNS.find((c) => c.id === selectedConcern) || SKIN_CONCERNS[0];
 
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#241c18] font-sans antialiased selection:bg-[#0088b6]/20 selection:text-[#0088b6]">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#faf8f5] text-[#241c18] font-sans antialiased selection:bg-[#0088b6]/20 selection:text-[#0088b6]">
       {/* Top Notification Bar */}
-      <div className="bg-[#1a1412] text-[#fff8fc] text-xs py-2 px-4 border-b border-white/10">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1.5 font-medium text-[#f1e7dc]">
-              <MapPin className="w-3.5 h-3.5 text-[#0088b6]" />
-              77A, Sengunthapuram Main Road, Karur
+      <div className="bg-[#1a1412] text-[#fff8fc] text-xs py-2 px-3 sm:px-4 border-b border-white/10 w-full overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <span className="flex items-center gap-1.5 font-medium text-[#f1e7dc] text-[11px] sm:text-xs truncate">
+              <MapPin className="w-3.5 h-3.5 text-[#0088b6] shrink-0" />
+              <span className="truncate">77A, Sengunthapuram Main Road, Karur</span>
             </span>
             <span className="hidden sm:inline-block text-white/30">•</span>
             <span className="hidden sm:flex items-center gap-1 text-[#f1e7dc]/80">
-              <Clock className="w-3.5 h-3.5 text-[#0088b6]" />
+              <Clock className="w-3.5 h-3.5 text-[#0088b6] shrink-0" />
               Mon–Sat: 9 AM–8 PM · 24x7 Emergency
             </span>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
             <a
               href={CLINIC_PHONE_LINK}
-              className="flex items-center gap-1 text-[#f1e7dc] hover:text-[#0088b6] transition-colors"
+              className="flex items-center gap-1 text-[#f1e7dc] hover:text-[#0088b6] transition-colors text-[11px] sm:text-xs"
             >
-              <Phone className="w-3.5 h-3.5 text-[#0088b6]" />
+              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0088b6] shrink-0" />
               <span className="font-semibold">{CLINIC_PHONE}</span>
             </a>
             <a
               href={CLINIC_WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] px-2.5 py-0.5 rounded-full font-semibold flex items-center gap-1 transition-colors"
+              className="bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] px-2 py-0.5 rounded-full font-semibold flex items-center gap-1 transition-colors text-[10px] sm:text-xs"
             >
-              <MessageCircle className="w-3 h-3" />
+              <MessageCircle className="w-3 h-3 shrink-0" />
               WhatsApp Us
             </a>
           </div>
@@ -377,25 +377,25 @@ export function LandingPage() {
       </div>
 
       {/* High-Converting Minimalist Digital Marketing Header */}
-      <header className="sticky top-0 z-40 bg-[#faf8f5]/95 backdrop-blur-md border-b border-[#e7ddd3]/80">
+      <header className="sticky top-0 z-40 bg-[#faf8f5]/95 backdrop-blur-md border-b border-[#e7ddd3]/80 w-full">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
           {/* Logo & Hospital Identity */}
-          <a href="#" className="flex items-center gap-2 sm:gap-3 shrink-0 group">
+          <a href="#" className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1 sm:flex-initial group">
             <img
               src={hospitalLogo}
               alt="Sanjay Rithik Hospital Logo"
-              className="h-9 sm:h-11 md:h-12 w-auto object-contain shrink-0 transition-transform group-hover:scale-105"
+              className="h-8 sm:h-11 md:h-12 w-auto object-contain shrink-0 transition-transform group-hover:scale-105"
             />
-            <div className="flex flex-col justify-center shrink-0">
+            <div className="flex flex-col justify-center min-w-0">
               <div className="flex items-center gap-1.5 sm:gap-2">
-                <span className="font-bold text-sm sm:text-base md:text-lg tracking-tight text-[#1a1412] font-serif whitespace-nowrap">
+                <span className="font-bold text-xs xs:text-sm sm:text-base md:text-lg tracking-tight text-[#1a1412] font-serif truncate">
                   Sanjay Rithik Hospital
                 </span>
-                <span className="hidden xs:inline-flex shrink-0 bg-[#0088b6]/10 text-[#0088b6] text-[9px] sm:text-[10px] uppercase font-bold tracking-wider px-1.5 sm:px-2 py-0.5 rounded-full whitespace-nowrap">
+                <span className="hidden sm:inline-flex shrink-0 bg-[#0088b6]/10 text-[#0088b6] text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full">
                   Dermatology
                 </span>
               </div>
-              <span className="hidden sm:block text-[11px] sm:text-xs text-[#746961] font-medium whitespace-nowrap mt-0.5">
+              <span className="hidden sm:block text-[11px] sm:text-xs text-[#746961] font-medium truncate mt-0.5">
                 Skin Laser & Cosmetology Centre · Karur
               </span>
             </div>
@@ -431,7 +431,7 @@ export function LandingPage() {
               href={CLINIC_WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-[#25D366]/40 text-[#128C7E] bg-[#25D366]/10 hover:bg-[#25D366]/20 font-bold text-xs sm:text-sm transition-all shadow-xs shrink-0"
+              className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-[#25D366]/40 text-[#128C7E] bg-[#25D366]/10 hover:bg-[#25D366]/20 font-bold text-xs sm:text-sm transition-all shadow-xs shrink-0"
             >
               <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
               <span>WhatsApp</span>
@@ -450,25 +450,25 @@ export function LandingPage() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 bg-gradient-to-b from-[#e8f7fa]/60 via-[#faf8f5] to-[#faf8f5]">
+      <section className="relative overflow-hidden pt-6 sm:pt-8 pb-14 sm:pb-16 lg:pt-14 lg:pb-24 bg-gradient-to-b from-[#e8f7fa]/60 via-[#faf8f5] to-[#faf8f5] w-full max-w-full">
         {/* Subtle Decorative Glows */}
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#0088b6]/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#006583]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-[#0088b6]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 left-0 w-64 sm:w-80 h-64 sm:h-80 bg-[#006583]/5 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#e7ddd3] shadow-sm">
-                <span className="flex h-2 w-2 rounded-full bg-[#0088b6] animate-pulse" />
-                <span className="text-xs font-bold uppercase tracking-wider text-[#746961]">
-                  Specialist Dermatology & Laser Cosmetology · Karur
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6 min-w-0 max-w-full">
+              {/* Badge (Overflow-safe on mobile) */}
+              <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white border border-[#e7ddd3] shadow-xs">
+                <span className="flex h-2 w-2 rounded-full bg-[#0088b6] animate-pulse shrink-0" />
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#746961] truncate">
+                  Dermatology & Laser Cosmetology · Karur
                 </span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-[#1a1412] leading-[1.14] tracking-tight">
+              <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-serif text-[#1a1412] leading-[1.18] sm:leading-[1.14] tracking-tight break-words">
                 Clear Skin, Healthy Hair &{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0088b6] to-[#006583]">
                   Youthful Radiance.
@@ -477,13 +477,13 @@ export function LandingPage() {
               </h1>
 
               {/* Subtitle */}
-              <p className="text-base sm:text-xl text-[#5c5048] leading-relaxed max-w-2xl">
+              <p className="text-sm sm:text-xl text-[#5c5048] leading-relaxed max-w-2xl break-words">
                 Personalized, doctor-led clinical solutions for acne, stubborn pigmentation, acne scars, hair thinning, and age-defying skin rejuvenation under{" "}
                 <strong className="text-[#1a1412] font-semibold">Dr. S. Kiruthika</strong> at Sanjay Rithik Hospital, Karur.
               </p>
 
               {/* Trust Checkmarks */}
-              <div className="grid grid-cols-1 xs:grid-cols-2 gap-2 sm:gap-3 pt-2 text-xs sm:text-sm text-[#3e342e]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 pt-1 sm:pt-2 text-xs sm:text-sm text-[#3e342e]">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#0088b6] flex-shrink-0" />
                   <span>Dermatologist Consultation</span>
@@ -503,21 +503,21 @@ export function LandingPage() {
               </div>
 
               {/* Primary Call-to-Actions */}
-              <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5">
+              <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5">
                 <a
                   href={CLINIC_WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-white font-semibold text-sm sm:text-base transition-all shadow-lg shadow-[#25D366]/25 hover:shadow-xl hover:shadow-[#25D366]/35 flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebd5a] text-white font-semibold text-sm sm:text-base transition-all shadow-lg shadow-[#25D366]/25 hover:shadow-xl hover:shadow-[#25D366]/35 flex items-center justify-center gap-2 group"
                 >
-                  <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" />
-                  <span>Chat with Doctor on WhatsApp</span>
+                  <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110 shrink-0" />
+                  <span className="truncate">Chat with Doctor on WhatsApp</span>
                 </a>
                 <a
                   href={CLINIC_PHONE_LINK}
-                  className="px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-white hover:bg-[#f1e7dc]/40 text-[#1a1412] border border-[#d6c7b8] font-semibold text-sm sm:text-base transition-all shadow-sm flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-white hover:bg-[#f1e7dc]/40 text-[#1a1412] border border-[#d6c7b8] font-semibold text-sm sm:text-base transition-all shadow-sm flex items-center justify-center gap-2"
                 >
-                  <Phone className="w-5 h-5 text-[#0088b6]" />
+                  <Phone className="w-5 h-5 text-[#0088b6] shrink-0" />
                   <span>Call {CLINIC_PHONE}</span>
                 </a>
               </div>
@@ -609,8 +609,8 @@ export function LandingPage() {
       </section>
 
       {/* QUICK FACTS / TRUST STRIP */}
-      <section className="bg-white border-y border-[#e7ddd3] py-6 sm:py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white border-y border-[#e7ddd3] py-6 sm:py-8 overflow-hidden w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center divide-x-0 lg:divide-x divide-[#e7ddd3]">
             <div className="p-2 sm:px-4">
               <p className="text-2xl sm:text-3xl font-serif font-bold text-[#0088b6]">12,000+</p>
@@ -633,22 +633,22 @@ export function LandingPage() {
       </section>
 
       {/* SECTION 1: WHAT CONCERN ARE YOU FACING? (INTERACTIVE FINDER) */}
-      <section id="concerns" className="py-20 bg-[#faf8f5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="concerns" className="py-16 sm:py-20 bg-[#faf8f5] overflow-hidden w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               Targeted Medical Solutions
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-serif text-[#1a1412] tracking-tight break-words">
               What Skin or Hair Concern Are You Facing?
             </h2>
-            <p className="text-base text-[#746961]">
+            <p className="text-sm sm:text-base text-[#746961] break-words">
               Select your concern below to discover its underlying clinical cause and how our dermatologist solves it with non-invasive, lasting procedures.
             </p>
           </div>
 
-          {/* Interactive Concern Tabs/Buttons */}
-          <div className="mt-8 sm:mt-10 flex overflow-x-auto no-scrollbar sm:flex-wrap sm:justify-center gap-2 sm:gap-3 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
+          {/* Interactive Concern Tabs/Buttons (Overflow-safe on mobile) */}
+          <div className="mt-8 sm:mt-10 flex overflow-x-auto no-scrollbar sm:flex-wrap sm:justify-center gap-2 sm:gap-3 pb-2 sm:pb-0 w-full max-w-full">
             {SKIN_CONCERNS.map((concern) => (
               <button
                 key={concern.id}
@@ -745,13 +745,13 @@ export function LandingPage() {
       </section>
 
       {/* SECTION 2: COMPLETE TREATMENT PORTFOLIO */}
-      <section id="treatments" className="py-20 bg-white border-t border-[#e7ddd3]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="treatments" className="py-16 sm:py-20 bg-white border-t border-[#e7ddd3] overflow-hidden w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               Hospital Services & Technologies
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-serif text-[#1a1412] tracking-tight break-words">
               Advanced Dermatology, Hair & Laser Cosmetology
             </h2>
             <p className="text-base text-[#746961]">
@@ -856,16 +856,16 @@ export function LandingPage() {
       </section>
 
       {/* SECTION 3: INTERACTIVE 4-STEP SKIN & HAIR ASSESSMENT TOOL */}
-      <section id="assessment" className="py-20 bg-gradient-to-b from-[#faf8f5] to-[#e8f7fa]/60 border-t border-[#e7ddd3]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="assessment" className="py-16 sm:py-20 bg-gradient-to-b from-[#faf8f5] to-[#e8f7fa]/60 border-t border-[#e7ddd3] overflow-hidden w-full max-w-full">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               Free 2-Minute Diagnostic Tool
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-serif text-[#1a1412] tracking-tight break-words">
               Check What Your Skin & Hair Needs
             </h2>
-            <p className="text-base text-[#746961] max-w-xl mx-auto">
+            <p className="text-sm sm:text-base text-[#746961] max-w-xl mx-auto break-words">
               Answer 4 simple questions to receive immediate tailored recommendations and direct WhatsApp advice from Dr. Kiruthika.
             </p>
           </div>
@@ -1102,8 +1102,8 @@ export function LandingPage() {
       </section>
 
       {/* SECTION 4: MEET THE DOCTOR & HOSPITAL AUTHORITY */}
-      <section id="doctor" className="py-20 bg-white border-t border-[#e7ddd3]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="doctor" className="py-16 sm:py-20 bg-white border-t border-[#e7ddd3] overflow-hidden w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Doctor Image and Accolades */}
             <div className="lg:col-span-5 relative">
@@ -1256,13 +1256,13 @@ export function LandingPage() {
       </section>
 
       {/* SECTION 5: REAL RESULTS & VERIFIED TESTIMONIALS */}
-      <section id="results" className="py-20 bg-[#faf8f5] border-t border-[#e7ddd3]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="results" className="py-16 sm:py-20 bg-[#faf8f5] border-t border-[#e7ddd3] overflow-hidden w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               Real Patient Proof
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-serif text-[#1a1412] tracking-tight break-words">
               Transformations & Verified Patient Experiences
             </h2>
             <p className="text-base text-[#746961]">
@@ -1357,13 +1357,13 @@ export function LandingPage() {
       </section>
 
       {/* SECTION 6: THE 5-STEP PATIENT EXPERIENCE JOURNEY */}
-      <section className="py-20 bg-white border-t border-[#e7ddd3]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="journey" className="py-16 sm:py-20 bg-white border-t border-[#e7ddd3] overflow-hidden w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               No Stress, Complete Comfort
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-serif text-[#1a1412] tracking-tight break-words">
               What to Expect During Your Visit
             </h2>
             <p className="text-base text-[#746961]">
@@ -1415,16 +1415,16 @@ export function LandingPage() {
       </section>
 
       {/* SECTION 7: FREQUENTLY ASKED QUESTIONS */}
-      <section id="faqs" className="py-20 bg-[#faf8f5] border-t border-[#e7ddd3]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="faqs" className="py-16 sm:py-20 bg-[#faf8f5] border-t border-[#e7ddd3] overflow-hidden w-full max-w-full">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="text-center space-y-3">
             <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               Clear Answers
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-serif text-[#1a1412] tracking-tight break-words">
               Frequently Asked Questions
             </h2>
-            <p className="text-base text-[#746961]">
+            <p className="text-sm sm:text-base text-[#746961] break-words">
               Everything you need to know about safety, sessions, pricing, and clinic consultations.
             </p>
           </div>
@@ -1461,7 +1461,7 @@ export function LandingPage() {
           <div className="mt-8 text-center p-6 bg-white rounded-2xl border border-[#e7ddd3]">
             <p className="text-sm font-semibold text-[#1a1412]">Have another question not listed here?</p>
             <p className="text-xs text-[#746961] mt-1">Our clinic reception is happy to guide you over WhatsApp or call.</p>
-            <div className="mt-4 flex justify-center gap-3">
+            <div className="mt-4 flex flex-wrap justify-center gap-3">
               <a
                 href={CLINIC_WHATSAPP_LINK}
                 target="_blank"
@@ -1482,8 +1482,8 @@ export function LandingPage() {
       </section>
 
       {/* SECTION 8: BOOKING FORM & CLINIC CONTACT DETAILS */}
-      <section id="booking" className="py-20 bg-white border-t border-[#e7ddd3]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="booking" className="py-16 sm:py-20 bg-white border-t border-[#e7ddd3] overflow-hidden w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left: Online Consultation Booking Form */}
             <div className="lg:col-span-7 bg-[#faf8f5] rounded-3xl border border-[#e7ddd3] p-6 sm:p-10 shadow-lg space-y-6">
@@ -1662,8 +1662,8 @@ export function LandingPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#1a1412] text-[#fff8fc] pt-12 sm:pt-14 pb-28 sm:pb-14 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="bg-[#1a1412] text-[#fff8fc] pt-12 sm:pt-14 pb-28 sm:pb-14 border-t border-white/10 overflow-hidden w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-3 md:col-span-2">
               <div className="flex items-center gap-3">
