@@ -114,7 +114,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   const gtmId = import.meta.env["VITE_GTM_CONTAINER_ID"] as string | undefined;
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
         {gtmId && (
@@ -127,7 +127,7 @@ function RootShell({ children }: { children: ReactNode }) {
           />
         )}
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {gtmId && (
           <noscript>
             <iframe
