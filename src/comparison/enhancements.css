@@ -1,25 +1,25 @@
 /* Shared tokens bridge the two preserved page versions. */
 .enhanced-site {
-  --ink: #09070b; --ink-foreground: #fff8fc; --clay: #ff3d9a;
-  --clay-foreground: #241c18; --background: #fcf9f5; --foreground: #241c18;
-  --card: #fff; --card-foreground: #241c18; --sand: #f1e7dc; --warm: #f7f0e7;
-  --muted-foreground: #746961; --border: #e7ddd3; --input: #e7ddd3;
-  --secondary: #f1e7dc; --accent-hover: #ff6bb5;
+  --ink: #0b1f28; --ink-foreground: #f4fafc; --clay: #0088b6;
+  --clay-foreground: #ffffff; --background: #fbfdfd; --foreground: #102a36;
+  --card: #fff; --card-foreground: #102a36; --sand: #e6f6f9; --warm: #f0fafc;
+  --muted-foreground: #507180; --border: #d2ecf1; --input: #d2ecf1;
+  --secondary: #e6f6f9; --accent-hover: #0099cc;
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
   --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px;
   --space-16: 64px; --space-20: 80px; --space-24: 96px; --space-30: 120px;
   --page-width: 1280px; --gutter: 48px; --card-radius: 18px; --control-radius: 12px;
-  --shadow-soft: 0 18px 50px -22px rgb(255 61 154 / 28%);
-  --shadow-lift: 0 28px 70px -30px rgb(255 61 154 / 36%);
-  --gradient-clay: linear-gradient(135deg, #ff3d9a 0%, #ff6bb5 48%, #c83cff 100%);
+  --shadow-soft: 0 18px 50px -22px rgb(0 136 182 / 24%);
+  --shadow-lift: 0 28px 70px -30px rgb(0 136 182 / 32%);
+  --gradient-clay: linear-gradient(135deg, #0088b6 0%, #38bdf8 48%, #006583 100%);
   color: var(--foreground); background: var(--background); font-size: 16px; line-height: 1.65;
 }
 .enhanced-site .version-b {
-  --ink: #09070b; --ink-foreground: #fff8fc; --clay: #ff3d9a; --clay-foreground: #fff;
-  --background: #fcf9f5; --foreground: #241c18; --card: #fff; --card-foreground: #241c18;
-  --sand: #f1e7dc; --warm: #f7f0e7; --muted-foreground: #746961; --border: #e7ddd3;
-  --secondary: #f1e7dc; --hospital-blue: #ff3d9a; --gradient-clay: linear-gradient(135deg,#ff3d9a,#c83cff);
-  --shadow-soft: 0 18px 50px -22px rgb(255 61 154 / 28%); --shadow-lift: 0 28px 70px -30px rgb(255 61 154 / 36%);
+  --ink: #0b1f28; --ink-foreground: #f4fafc; --clay: #0088b6; --clay-foreground: #fff;
+  --background: #fbfdfd; --foreground: #102a36; --card: #fff; --card-foreground: #102a36;
+  --sand: #e6f6f9; --warm: #f0fafc; --muted-foreground: #507180; --border: #d2ecf1;
+  --secondary: #e6f6f9; --hospital-blue: #0088b6; --gradient-clay: linear-gradient(135deg,#0088b6,#006583);
+  --shadow-soft: 0 18px 50px -22px rgb(0 136 182 / 24%); --shadow-lift: 0 28px 70px -30px rgb(0 136 182 / 32%);
   font-family: var(--font-sans);
 }
 .enhanced-site *, .enhanced-site *::before, .enhanced-site *::after { box-sizing: border-box; }

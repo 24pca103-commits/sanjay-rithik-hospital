@@ -340,27 +340,27 @@ export function LandingPage() {
   const currentConcernData = SKIN_CONCERNS.find((c) => c.id === selectedConcern) || SKIN_CONCERNS[0];
 
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#241c18] font-sans antialiased selection:bg-[#ff3d9a]/20 selection:text-[#ff3d9a]">
+    <div className="min-h-screen bg-[#faf8f5] text-[#241c18] font-sans antialiased selection:bg-[#0088b6]/20 selection:text-[#0088b6]">
       {/* Top Notification Bar */}
       <div className="bg-[#1a1412] text-[#fff8fc] text-xs py-2 px-4 border-b border-white/10">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1.5 font-medium text-[#f1e7dc]">
-              <MapPin className="w-3.5 h-3.5 text-[#ff3d9a]" />
+              <MapPin className="w-3.5 h-3.5 text-[#0088b6]" />
               77A, Sengunthapuram Main Road, Karur
             </span>
             <span className="hidden sm:inline-block text-white/30">•</span>
             <span className="hidden sm:flex items-center gap-1 text-[#f1e7dc]/80">
-              <Clock className="w-3.5 h-3.5 text-[#ff3d9a]" />
+              <Clock className="w-3.5 h-3.5 text-[#0088b6]" />
               Mon–Sat: 9 AM–8 PM · 24x7 Emergency
             </span>
           </div>
           <div className="flex items-center gap-4">
             <a
               href={CLINIC_PHONE_LINK}
-              className="flex items-center gap-1 text-[#f1e7dc] hover:text-[#ff3d9a] transition-colors"
+              className="flex items-center gap-1 text-[#f1e7dc] hover:text-[#0088b6] transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-[#ff3d9a]" />
+              <Phone className="w-3.5 h-3.5 text-[#0088b6]" />
               <span className="font-semibold">{CLINIC_PHONE}</span>
             </a>
             <a
@@ -391,7 +391,7 @@ export function LandingPage() {
                 <span className="font-bold text-base sm:text-lg tracking-tight text-[#1a1412] font-serif whitespace-nowrap">
                   Sanjay Rithik Hospital
                 </span>
-                <span className="shrink-0 bg-[#ff3d9a]/10 text-[#ff3d9a] text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full whitespace-nowrap">
+                <span className="shrink-0 bg-[#0088b6]/10 text-[#0088b6] text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full whitespace-nowrap">
                   Dermatology
                 </span>
               </div>
@@ -421,7 +421,7 @@ export function LandingPage() {
               href={CLINIC_PHONE_LINK}
               className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-[#d6c7b8] text-[#1a1412] bg-white hover:bg-[#f1e7dc]/40 font-bold text-xs sm:text-sm transition-all shadow-xs shrink-0"
             >
-              <Phone className="w-4 h-4 text-[#ff3d9a] shrink-0" />
+              <Phone className="w-4 h-4 text-[#0088b6] shrink-0" />
               <span className="hidden md:inline">{CLINIC_PHONE}</span>
               <span className="md:hidden">Call</span>
             </a>
@@ -440,7 +440,7 @@ export function LandingPage() {
             {/* Primary Booking Button */}
             <a
               href="#booking"
-              className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-[#ff3d9a] hover:bg-[#e02682] text-white font-bold text-xs sm:text-sm transition-all shadow-md shadow-[#ff3d9a]/25 hover:shadow-lg hover:shadow-[#ff3d9a]/35 shrink-0"
+              className="whitespace-nowrap inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-[#0088b6] hover:bg-[#007096] text-white font-bold text-xs sm:text-sm transition-all shadow-md shadow-[#0088b6]/25 hover:shadow-lg hover:shadow-[#0088b6]/35 shrink-0"
             >
               <Calendar className="w-4 h-4 shrink-0" />
               <span className="hidden sm:inline">Book Appointment</span>
@@ -451,10 +451,10 @@ export function LandingPage() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 bg-gradient-to-b from-[#f7f0e7]/70 via-[#faf8f5] to-[#faf8f5]">
+      <section className="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 bg-gradient-to-b from-[#e8f7fa]/60 via-[#faf8f5] to-[#faf8f5]">
         {/* Subtle Decorative Glows */}
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#ff3d9a]/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#c83cff]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#0088b6]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#006583]/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -462,7 +462,7 @@ export function LandingPage() {
             <div className="lg:col-span-7 space-y-6">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#e7ddd3] shadow-sm">
-                <span className="flex h-2 w-2 rounded-full bg-[#ff3d9a] animate-pulse" />
+                <span className="flex h-2 w-2 rounded-full bg-[#0088b6] animate-pulse" />
                 <span className="text-xs font-bold uppercase tracking-wider text-[#746961]">
                   Specialist Dermatology & Laser Cosmetology · Karur
                 </span>
@@ -471,7 +471,7 @@ export function LandingPage() {
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-[#1a1412] leading-[1.12] tracking-tight">
                 Clear Skin, Healthy Hair &{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff3d9a] to-[#c83cff]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0088b6] to-[#006583]">
                   Youthful Radiance.
                 </span>{" "}
                 Guided by Specialist Care.
@@ -486,19 +486,19 @@ export function LandingPage() {
               {/* Trust Checkmarks */}
               <div className="grid grid-cols-2 gap-3 pt-2 text-sm text-[#3e342e]">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff3d9a] flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#0088b6] flex-shrink-0" />
                   <span>Dermatologist Consultation</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff3d9a] flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#0088b6] flex-shrink-0" />
                   <span>US-FDA Approved Lasers</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff3d9a] flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#0088b6] flex-shrink-0" />
                   <span>Non-Surgical, Natural Results</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff3d9a] flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#0088b6] flex-shrink-0" />
                   <span>440+ Verified 5-Star Reviews</span>
                 </div>
               </div>
@@ -518,7 +518,7 @@ export function LandingPage() {
                   href={CLINIC_PHONE_LINK}
                   className="px-6 py-4 rounded-xl bg-white hover:bg-[#f1e7dc]/40 text-[#1a1412] border border-[#d6c7b8] font-semibold text-base transition-all shadow-sm flex items-center justify-center gap-2"
                 >
-                  <Phone className="w-5 h-5 text-[#ff3d9a]" />
+                  <Phone className="w-5 h-5 text-[#0088b6]" />
                   <span>Call {CLINIC_PHONE}</span>
                 </a>
               </div>
@@ -528,7 +528,7 @@ export function LandingPage() {
                 <span>Not sure what you need?</span>
                 <a
                   href="#assessment"
-                  className="text-[#ff3d9a] font-semibold underline underline-offset-4 hover:text-[#e02682] flex items-center gap-1"
+                  className="text-[#0088b6] font-semibold underline underline-offset-4 hover:text-[#007096] flex items-center gap-1"
                 >
                   Take our 2-Minute Skin Assessment
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -547,7 +547,7 @@ export function LandingPage() {
                   <span className="text-xs text-[#746961]">(440+ Google Reviews)</span>
                 </div>
                 <div className="text-xs text-[#746961] flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-[#ff3d9a]" />
+                  <ShieldCheck className="w-4 h-4 text-[#0088b6]" />
                   <span>Karur&apos;s Landmark Healthcare Facility</span>
                 </div>
               </div>
@@ -571,12 +571,12 @@ export function LandingPage() {
                       <img
                         src={doctorKiruthika}
                         alt="Dr. S. Kiruthika Dermatologist"
-                        className="w-12 h-12 rounded-full object-cover border-2 border-[#ff3d9a]"
+                        className="w-12 h-12 rounded-full object-cover border-2 border-[#0088b6]"
                       />
                       <div>
                         <h4 className="font-bold text-white text-base">Dr. S. Kiruthika</h4>
                         <p className="text-xs text-white/80">Consultant Dermatologist & Cosmetologist</p>
-                        <p className="text-[11px] text-[#ff6bb5] font-medium mt-0.5">Sanjay Rithik Hospital, Karur</p>
+                        <p className="text-[11px] text-[#38bdf8] font-medium mt-0.5">Sanjay Rithik Hospital, Karur</p>
                       </div>
                     </div>
                   </div>
@@ -584,7 +584,7 @@ export function LandingPage() {
 
                 {/* Floating Badge 1: 15+ Years Trust */}
                 <div className="absolute -top-4 -left-4 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#ff3d9a]/10 flex items-center justify-center text-[#ff3d9a]">
+                  <div className="w-10 h-10 rounded-xl bg-[#0088b6]/10 flex items-center justify-center text-[#0088b6]">
                     <Award className="w-5 h-5" />
                   </div>
                   <div>
@@ -614,7 +614,7 @@ export function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x-0 md:divide-x divide-[#e7ddd3]">
             <div className="px-4">
-              <p className="text-3xl font-serif font-bold text-[#ff3d9a]">12,000+</p>
+              <p className="text-3xl font-serif font-bold text-[#0088b6]">12,000+</p>
               <p className="text-xs font-semibold uppercase tracking-wider text-[#746961] mt-1">Patients Treated</p>
             </div>
             <div className="px-4">
@@ -622,7 +622,7 @@ export function LandingPage() {
               <p className="text-xs font-semibold uppercase tracking-wider text-[#746961] mt-1">440+ Google Reviews</p>
             </div>
             <div className="px-4">
-              <p className="text-3xl font-serif font-bold text-[#ff3d9a]">100%</p>
+              <p className="text-3xl font-serif font-bold text-[#0088b6]">100%</p>
               <p className="text-xs font-semibold uppercase tracking-wider text-[#746961] mt-1">Doctor-Led Care</p>
             </div>
             <div className="px-4">
@@ -637,7 +637,7 @@ export function LandingPage() {
       <section id="concerns" className="py-20 bg-[#faf8f5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold tracking-widest text-[#ff3d9a] uppercase">
+            <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               Targeted Medical Solutions
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
@@ -656,8 +656,8 @@ export function LandingPage() {
                 onClick={() => setSelectedConcern(concern.id)}
                 className={`px-4 sm:px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all ${
                   selectedConcern === concern.id
-                    ? "bg-[#ff3d9a] text-white shadow-md shadow-[#ff3d9a]/30 scale-105"
-                    : "bg-white text-[#4a3f38] border border-[#e7ddd3] hover:border-[#ff3d9a]/50 hover:bg-[#fff5fa]"
+                    ? "bg-[#0088b6] text-white shadow-md shadow-[#0088b6]/30 scale-105"
+                    : "bg-white text-[#4a3f38] border border-[#e7ddd3] hover:border-[#0088b6]/50 hover:bg-[#f0f9fb]"
                 }`}
               >
                 {concern.name}
@@ -677,7 +677,7 @@ export function LandingPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-[#ff6bb5]">
+                    <span className="text-xs font-semibold uppercase tracking-wider text-[#38bdf8]">
                       Karur Clinical Care
                     </span>
                     <h3 className="text-lg font-bold">{currentConcernData.name}</h3>
@@ -687,7 +687,7 @@ export function LandingPage() {
 
               <div className="lg:col-span-7 space-y-5">
                 <div>
-                  <span className="text-xs font-bold text-[#ff3d9a] uppercase tracking-wider">
+                  <span className="text-xs font-bold text-[#0088b6] uppercase tracking-wider">
                     Clinical Diagnosis
                   </span>
                   <h3 className="text-2xl font-serif text-[#1a1412] font-semibold mt-1">
@@ -714,7 +714,7 @@ export function LandingPage() {
                 <div className="p-4 rounded-2xl bg-[#faf8f5] border border-[#e7ddd3]/80 space-y-1">
                   <p className="text-xs font-bold text-[#1a1412]">Why this works:</p>
                   <p className="text-sm text-[#5c5048]">{currentConcernData.benefits}</p>
-                  <p className="text-xs font-semibold text-[#ff3d9a] pt-1">
+                  <p className="text-xs font-semibold text-[#0088b6] pt-1">
                     Expected timeline: {currentConcernData.time}
                   </p>
                 </div>
@@ -749,7 +749,7 @@ export function LandingPage() {
       <section id="treatments" className="py-20 bg-white border-t border-[#e7ddd3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold tracking-widest text-[#ff3d9a] uppercase">
+            <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               Hospital Services & Technologies
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
@@ -771,11 +771,11 @@ export function LandingPage() {
                   onClick={() => setActiveTab(idx)}
                   className={`p-4 rounded-2xl border text-left transition-all ${
                     isActive
-                      ? "bg-[#faf8f5] border-[#ff3d9a] ring-2 ring-[#ff3d9a]/20 shadow-md"
-                      : "bg-white border-[#e7ddd3] hover:border-[#ff3d9a]/40"
+                      ? "bg-[#faf8f5] border-[#0088b6] ring-2 ring-[#0088b6]/20 shadow-md"
+                      : "bg-white border-[#e7ddd3] hover:border-[#0088b6]/40"
                   }`}
                 >
-                  <Icon className={`w-6 h-6 mb-2 ${isActive ? "text-[#ff3d9a]" : "text-[#746961]"}`} />
+                  <Icon className={`w-6 h-6 mb-2 ${isActive ? "text-[#0088b6]" : "text-[#746961]"}`} />
                   <h3 className={`text-sm font-bold ${isActive ? "text-[#1a1412]" : "text-[#4a3f38]"}`}>
                     {cat.title}
                   </h3>
@@ -789,12 +789,12 @@ export function LandingPage() {
             {TREATMENT_CATEGORIES[activeTab].items.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-[#faf8f5] p-6 rounded-2xl border border-[#e7ddd3] hover:border-[#ff3d9a]/50 transition-all hover:shadow-md flex flex-col justify-between"
+                className="bg-[#faf8f5] p-6 rounded-2xl border border-[#e7ddd3] hover:border-[#0088b6]/50 transition-all hover:shadow-md flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-start justify-between gap-3">
                     <h4 className="text-lg font-serif font-bold text-[#1a1412]">{item.name}</h4>
-                    <span className="px-2.5 py-1 rounded-full bg-white text-[11px] font-semibold text-[#ff3d9a] border border-[#e7ddd3] whitespace-nowrap">
+                    <span className="px-2.5 py-1 rounded-full bg-white text-[11px] font-semibold text-[#0088b6] border border-[#e7ddd3] whitespace-nowrap">
                       {item.duration}
                     </span>
                   </div>
@@ -811,7 +811,7 @@ export function LandingPage() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#ff3d9a] font-bold hover:underline flex items-center gap-1"
+                    className="text-[#0088b6] font-bold hover:underline flex items-center gap-1"
                   >
                     Enquire on WhatsApp <ArrowRight className="w-3 h-3" />
                   </a>
@@ -857,10 +857,10 @@ export function LandingPage() {
       </section>
 
       {/* SECTION 3: INTERACTIVE 4-STEP SKIN & HAIR ASSESSMENT TOOL */}
-      <section id="assessment" className="py-20 bg-gradient-to-b from-[#faf8f5] to-[#f4ede4] border-t border-[#e7ddd3]">
+      <section id="assessment" className="py-20 bg-gradient-to-b from-[#faf8f5] to-[#e8f7fa]/60 border-t border-[#e7ddd3]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-3">
-            <span className="text-xs font-bold tracking-widest text-[#ff3d9a] uppercase">
+            <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               Free 2-Minute Diagnostic Tool
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
@@ -883,9 +883,9 @@ export function LandingPage() {
                     key={step}
                     className={`h-2 rounded-full transition-all ${
                       step === assessmentStep
-                        ? "w-8 bg-[#ff3d9a]"
+                        ? "w-8 bg-[#0088b6]"
                         : step < assessmentStep
-                        ? "w-4 bg-[#ff3d9a]/50"
+                        ? "w-4 bg-[#0088b6]/50"
                         : "w-4 bg-[#e7ddd3]"
                     }`}
                   />
@@ -916,8 +916,8 @@ export function LandingPage() {
                       }}
                       className={`p-4 rounded-2xl border text-left font-semibold text-sm transition-all ${
                         quizConcern === option
-                          ? "bg-[#ff3d9a]/10 border-[#ff3d9a] text-[#ff3d9a]"
-                          : "bg-[#faf8f5] border-[#e7ddd3] hover:border-[#ff3d9a]"
+                          ? "bg-[#0088b6]/10 border-[#0088b6] text-[#0088b6]"
+                          : "bg-[#faf8f5] border-[#e7ddd3] hover:border-[#0088b6]"
                       }`}
                     >
                       {option}
@@ -944,8 +944,8 @@ export function LandingPage() {
                         }}
                         className={`p-5 rounded-2xl border text-left font-semibold text-sm transition-all ${
                           quizDuration === option
-                            ? "bg-[#ff3d9a]/10 border-[#ff3d9a] text-[#ff3d9a]"
-                            : "bg-[#faf8f5] border-[#e7ddd3] hover:border-[#ff3d9a]"
+                            ? "bg-[#0088b6]/10 border-[#0088b6] text-[#0088b6]"
+                            : "bg-[#faf8f5] border-[#e7ddd3] hover:border-[#0088b6]"
                         }`}
                       >
                         {option}
@@ -978,8 +978,8 @@ export function LandingPage() {
                       }}
                       className={`p-4 rounded-2xl border text-center font-semibold text-sm transition-all ${
                         quizSkinType === option
-                          ? "bg-[#ff3d9a]/10 border-[#ff3d9a] text-[#ff3d9a]"
-                          : "bg-[#faf8f5] border-[#e7ddd3] hover:border-[#ff3d9a]"
+                          ? "bg-[#0088b6]/10 border-[#0088b6] text-[#0088b6]"
+                          : "bg-[#faf8f5] border-[#e7ddd3] hover:border-[#0088b6]"
                       }`}
                     >
                       {option}
@@ -1016,8 +1016,8 @@ export function LandingPage() {
                       }}
                       className={`p-4 rounded-2xl border text-left font-semibold text-sm transition-all ${
                         quizGoal === option
-                          ? "bg-[#ff3d9a]/10 border-[#ff3d9a] text-[#ff3d9a]"
-                          : "bg-[#faf8f5] border-[#e7ddd3] hover:border-[#ff3d9a]"
+                          ? "bg-[#0088b6]/10 border-[#0088b6] text-[#0088b6]"
+                          : "bg-[#faf8f5] border-[#e7ddd3] hover:border-[#0088b6]"
                       }`}
                     >
                       {option}
@@ -1035,13 +1035,13 @@ export function LandingPage() {
 
             {/* Assessment Result Card */}
             {assessmentSubmitted && (
-              <div className="mt-4 p-6 sm:p-8 rounded-2xl bg-[#faf8f5] border border-[#ff3d9a]/40 space-y-6">
+              <div className="mt-4 p-6 sm:p-8 rounded-2xl bg-[#faf8f5] border border-[#0088b6]/40 space-y-6">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-2xl bg-[#25D366]/20 text-[#25D366] flex items-center justify-center">
                     <Sparkles className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-[#ff3d9a] uppercase tracking-wider">
+                    <span className="text-xs font-bold text-[#0088b6] uppercase tracking-wider">
                       Personalized Recommendation
                     </span>
                     <h4 className="text-xl font-serif font-bold text-[#1a1412]">
@@ -1116,7 +1116,7 @@ export function LandingPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#ff6bb5]">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#38bdf8]">
                     Lead Dermatologist
                   </span>
                   <h3 className="text-2xl font-serif font-bold text-white">Dr. S. Kiruthika</h3>
@@ -1127,7 +1127,7 @@ export function LandingPage() {
 
               {/* Verified Trust Stamp */}
               <div className="absolute -bottom-5 -right-5 bg-white p-4 rounded-2xl shadow-xl border border-[#e7ddd3] flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-[#ff3d9a]/10 flex items-center justify-center text-[#ff3d9a]">
+                <div className="w-12 h-12 rounded-xl bg-[#0088b6]/10 flex items-center justify-center text-[#0088b6]">
                   <Stethoscope className="w-6 h-6" />
                 </div>
                 <div>
@@ -1140,7 +1140,7 @@ export function LandingPage() {
             {/* Doctor Bio and Philosophy */}
             <div className="lg:col-span-7 space-y-6">
               <div className="space-y-2">
-                <span className="text-xs font-bold tracking-widest text-[#ff3d9a] uppercase">
+                <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
                   Specialist Guidance
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
@@ -1155,7 +1155,7 @@ export function LandingPage() {
 
               <div className="space-y-3.5 pt-2">
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#ff3d9a]/10 text-[#ff3d9a] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 rounded-full bg-[#0088b6]/10 text-[#0088b6] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <div>
@@ -1167,7 +1167,7 @@ export function LandingPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#ff3d9a]/10 text-[#ff3d9a] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 rounded-full bg-[#0088b6]/10 text-[#0088b6] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <div>
@@ -1179,7 +1179,7 @@ export function LandingPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[#ff3d9a]/10 text-[#ff3d9a] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 rounded-full bg-[#0088b6]/10 text-[#0088b6] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <div>
@@ -1217,7 +1217,7 @@ export function LandingPage() {
           <div className="mt-16 bg-[#faf8f5] rounded-3xl border border-[#e7ddd3] p-6 sm:p-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-6 space-y-4">
-                <span className="text-xs font-bold text-[#ff3d9a] uppercase tracking-wider">
+                <span className="text-xs font-bold text-[#0088b6] uppercase tracking-wider">
                   Inside Sanjay Rithik Hospital
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-serif text-[#1a1412] font-bold">
@@ -1229,7 +1229,7 @@ export function LandingPage() {
                 <div className="flex items-center gap-3 pt-2">
                   <button
                     onClick={toggleVideo}
-                    className="px-5 py-3 rounded-xl bg-[#ff3d9a] hover:bg-[#e02682] text-white font-semibold text-sm flex items-center gap-2 shadow-md shadow-[#ff3d9a]/20"
+                    className="px-5 py-3 rounded-xl bg-[#0088b6] hover:bg-[#007096] text-white font-semibold text-sm flex items-center gap-2 shadow-md shadow-[#0088b6]/20"
                   >
                     {isVideoPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 fill-current" />}
                     {isVideoPlaying ? "Pause Video" : "Watch Clinical Tour"}
@@ -1260,7 +1260,7 @@ export function LandingPage() {
       <section id="results" className="py-20 bg-[#faf8f5] border-t border-[#e7ddd3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold tracking-widest text-[#ff3d9a] uppercase">
+            <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               Real Patient Proof
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
@@ -1282,7 +1282,7 @@ export function LandingPage() {
                 />
               </div>
               <div className="p-5 space-y-1">
-                <span className="text-[11px] font-bold text-[#ff3d9a] uppercase">4 Sessions</span>
+                <span className="text-[11px] font-bold text-[#0088b6] uppercase">4 Sessions</span>
                 <h4 className="text-base font-bold text-[#1a1412]">Facial Tone & Pigment Clearance</h4>
                 <p className="text-xs text-[#746961]">
                   Targeted Q-Switched laser toning and medical peeling for uneven skin.
@@ -1299,7 +1299,7 @@ export function LandingPage() {
                 />
               </div>
               <div className="p-5 space-y-1">
-                <span className="text-[11px] font-bold text-[#ff3d9a] uppercase">6 Sessions</span>
+                <span className="text-[11px] font-bold text-[#0088b6] uppercase">6 Sessions</span>
                 <h4 className="text-base font-bold text-[#1a1412]">Smooth Skin Texture Pathway</h4>
                 <p className="text-xs text-[#746961]">
                   Comfort-led laser resurfacing and collagen restoration.
@@ -1316,7 +1316,7 @@ export function LandingPage() {
                 />
               </div>
               <div className="p-5 space-y-1">
-                <span className="text-[11px] font-bold text-[#ff3d9a] uppercase">5 Sessions</span>
+                <span className="text-[11px] font-bold text-[#0088b6] uppercase">5 Sessions</span>
                 <h4 className="text-base font-bold text-[#1a1412]">Permanent Hair Reduction</h4>
                 <p className="text-xs text-[#746961]">
                   Painless triple-wavelength laser for silky, ingrown-free skin.
@@ -1361,7 +1361,7 @@ export function LandingPage() {
       <section className="py-20 bg-white border-t border-[#e7ddd3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-bold tracking-widest text-[#ff3d9a] uppercase">
+            <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               No Stress, Complete Comfort
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
@@ -1405,7 +1405,7 @@ export function LandingPage() {
                 className="bg-[#faf8f5] p-5 rounded-2xl border border-[#e7ddd3] relative flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-2xl font-serif font-bold text-[#ff3d9a]">{s.step}</span>
+                  <span className="text-2xl font-serif font-bold text-[#0088b6]">{s.step}</span>
                   <h4 className="text-base font-bold text-[#1a1412] mt-2 mb-1">{s.title}</h4>
                   <p className="text-xs text-[#5c5048] leading-relaxed">{s.desc}</p>
                 </div>
@@ -1419,7 +1419,7 @@ export function LandingPage() {
       <section id="faqs" className="py-20 bg-[#faf8f5] border-t border-[#e7ddd3]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-3">
-            <span className="text-xs font-bold tracking-widest text-[#ff3d9a] uppercase">
+            <span className="text-xs font-bold tracking-widest text-[#0088b6] uppercase">
               Clear Answers
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif text-[#1a1412] tracking-tight">
@@ -1440,11 +1440,11 @@ export function LandingPage() {
                 >
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-[#1a1412] hover:text-[#ff3d9a]"
+                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-semibold text-sm sm:text-base text-[#1a1412] hover:text-[#0088b6]"
                   >
                     <span>{faq.q}</span>
                     <ChevronDown
-                      className={`w-5 h-5 text-[#ff3d9a] transition-transform duration-200 flex-shrink-0 ${
+                      className={`w-5 h-5 text-[#0088b6] transition-transform duration-200 flex-shrink-0 ${
                         isOpen ? "transform rotate-180" : ""
                       }`}
                     />
@@ -1489,7 +1489,7 @@ export function LandingPage() {
             {/* Left: Online Consultation Booking Form */}
             <div className="lg:col-span-7 bg-[#faf8f5] rounded-3xl border border-[#e7ddd3] p-6 sm:p-10 shadow-lg space-y-6">
               <div>
-                <span className="text-xs font-bold text-[#ff3d9a] uppercase tracking-wider">
+                <span className="text-xs font-bold text-[#0088b6] uppercase tracking-wider">
                   Direct Appointment Desk
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-serif text-[#1a1412] font-bold mt-1">
@@ -1512,7 +1512,7 @@ export function LandingPage() {
                       placeholder="e.g. Priya Sharma"
                       value={formName}
                       onChange={(e) => setFormName(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#ff3d9a]"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6]"
                     />
                   </div>
                   <div>
@@ -1525,7 +1525,7 @@ export function LandingPage() {
                       placeholder="e.g. 9876543210"
                       value={formPhone}
                       onChange={(e) => setFormPhone(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#ff3d9a]"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6]"
                     />
                   </div>
                 </div>
@@ -1538,7 +1538,7 @@ export function LandingPage() {
                     <select
                       value={formConcern}
                       onChange={(e) => setFormConcern(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#ff3d9a]"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6]"
                     >
                       <option value="Dermatology Consultation">General Skin / Dermatology</option>
                       <option value="Acne & Breakouts">Acne & Active Breakouts</option>
@@ -1559,7 +1559,7 @@ export function LandingPage() {
                       placeholder="e.g. Tomorrow Afternoon"
                       value={formDate}
                       onChange={(e) => setFormDate(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#ff3d9a]"
+                      className="w-full px-4 py-3 rounded-xl bg-white border border-[#e7ddd3] text-sm text-[#1a1412] focus:outline-none focus:border-[#0088b6]"
                     />
                   </div>
                 </div>
@@ -1567,7 +1567,7 @@ export function LandingPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 rounded-xl bg-[#ff3d9a] hover:bg-[#e02682] text-white font-bold text-base transition-all shadow-lg shadow-[#ff3d9a]/25 flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full py-4 rounded-xl bg-[#0088b6] hover:bg-[#007096] text-white font-bold text-base transition-all shadow-lg shadow-[#0088b6]/25 flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   <Send className="w-5 h-5" />
                   {isSubmitting ? "Submitting Request..." : "Request Appointment"}
@@ -1592,7 +1592,7 @@ export function LandingPage() {
             {/* Right: Hospital Location & Contact Details */}
             <div id="clinic" className="lg:col-span-5 space-y-6">
               <div className="space-y-2">
-                <span className="text-xs font-bold text-[#ff3d9a] uppercase tracking-wider">
+                <span className="text-xs font-bold text-[#0088b6] uppercase tracking-wider">
                   Visit Sanjay Rithik Hospital
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-serif text-[#1a1412] font-bold">
@@ -1602,7 +1602,7 @@ export function LandingPage() {
 
               <div className="bg-[#faf8f5] p-6 rounded-2xl border border-[#e7ddd3] space-y-4">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[#ff3d9a] flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[#0088b6] flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-sm font-bold text-[#1a1412] block">Hospital Address:</strong>
                     <p className="text-sm text-[#5c5048] leading-relaxed">
@@ -1613,12 +1613,12 @@ export function LandingPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-[#ff3d9a] flex-shrink-0 mt-0.5" />
+                  <Phone className="w-5 h-5 text-[#0088b6] flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-sm font-bold text-[#1a1412] block">Direct Phone Line:</strong>
                     <a
                       href={CLINIC_PHONE_LINK}
-                      className="text-sm text-[#ff3d9a] font-bold hover:underline"
+                      className="text-sm text-[#0088b6] font-bold hover:underline"
                     >
                       {CLINIC_PHONE}
                     </a>
@@ -1626,7 +1626,7 @@ export function LandingPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-[#ff3d9a] flex-shrink-0 mt-0.5" />
+                  <Clock className="w-5 h-5 text-[#0088b6] flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-sm font-bold text-[#1a1412] block">Consultation Hours:</strong>
                     <p className="text-xs text-[#5c5048]">
@@ -1641,9 +1641,9 @@ export function LandingPage() {
                   href={GOOGLE_MAPS_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3 rounded-xl bg-white border border-[#d6c7b8] hover:bg-[#fff5fa] text-[#1a1412] font-semibold text-xs flex items-center justify-center gap-2 transition-colors shadow-sm"
+                  className="w-full py-3 rounded-xl bg-white border border-[#d6c7b8] hover:bg-[#f0f9fb] text-[#1a1412] font-semibold text-xs flex items-center justify-center gap-2 transition-colors shadow-sm"
                 >
-                  <MapPin className="w-4 h-4 text-[#ff3d9a]" />
+                  <MapPin className="w-4 h-4 text-[#0088b6]" />
                   Open in Google Maps Directions
                   <ExternalLink className="w-3 h-3 text-[#746961]" />
                 </a>
@@ -1680,7 +1680,7 @@ export function LandingPage() {
               <p className="text-xs text-white/70 max-w-sm leading-relaxed">
                 Specialist Dermatology, Hair Restoration & Aesthetic Laser Cosmetology in Karur. Guided by Dr. S. Kiruthika with advanced clinical protocols and compassionate patient care.
               </p>
-              <p className="text-xs text-[#ff6bb5] font-semibold">
+              <p className="text-xs text-[#38bdf8] font-semibold">
                 77A, Sengunthapuram Main Road, Karur 639002 • {CLINIC_PHONE}
               </p>
             </div>
@@ -1689,21 +1689,21 @@ export function LandingPage() {
               <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-3">
                 Key Services
               </h4>
-              <p><a href="#treatments" className="text-white/70 hover:text-[#ff6bb5]">Acne & Scar Laser Resurfacing</a></p>
-              <p><a href="#treatments" className="text-white/70 hover:text-[#ff6bb5]">Pigmentation & Melasma Removal</a></p>
-              <p><a href="#treatments" className="text-white/70 hover:text-[#ff6bb5]">GFC & PRP Hair Fall Therapy</a></p>
-              <p><a href="#treatments" className="text-white/70 hover:text-[#ff6bb5]">Hydrafacial & Medi-Glow Peels</a></p>
-              <p><a href="#treatments" className="text-white/70 hover:text-[#ff6bb5]">Permanent Laser Hair Reduction</a></p>
+              <p><a href="#treatments" className="text-white/70 hover:text-[#38bdf8]">Acne & Scar Laser Resurfacing</a></p>
+              <p><a href="#treatments" className="text-white/70 hover:text-[#38bdf8]">Pigmentation & Melasma Removal</a></p>
+              <p><a href="#treatments" className="text-white/70 hover:text-[#38bdf8]">GFC & PRP Hair Fall Therapy</a></p>
+              <p><a href="#treatments" className="text-white/70 hover:text-[#38bdf8]">Hydrafacial & Medi-Glow Peels</a></p>
+              <p><a href="#treatments" className="text-white/70 hover:text-[#38bdf8]">Permanent Laser Hair Reduction</a></p>
             </div>
 
             <div className="space-y-2 text-xs">
               <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-3">
                 Patient Actions
               </h4>
-              <p><a href={CLINIC_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#ff6bb5]">Instant WhatsApp Consultation</a></p>
-              <p><a href={CLINIC_PHONE_LINK} className="text-white/70 hover:text-[#ff6bb5]">Call {CLINIC_PHONE}</a></p>
-              <p><a href="#assessment" className="text-white/70 hover:text-[#ff6bb5]">Take 2-Min Skin Check</a></p>
-              <p><a href={GOOGLE_MAPS_LINK} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#ff6bb5]">Google Maps Directions</a></p>
+              <p><a href={CLINIC_WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#38bdf8]">Instant WhatsApp Consultation</a></p>
+              <p><a href={CLINIC_PHONE_LINK} className="text-white/70 hover:text-[#38bdf8]">Call {CLINIC_PHONE}</a></p>
+              <p><a href="#assessment" className="text-white/70 hover:text-[#38bdf8]">Take 2-Min Skin Check</a></p>
+              <p><a href={GOOGLE_MAPS_LINK} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-[#38bdf8]">Google Maps Directions</a></p>
             </div>
           </div>
 
@@ -1736,7 +1736,7 @@ export function LandingPage() {
         </a>
         <a
           href="#booking"
-          className="px-4 py-3 rounded-xl bg-[#ff3d9a] text-white font-bold text-xs flex items-center justify-center gap-1 shadow-md"
+          className="px-4 py-3 rounded-xl bg-[#0088b6] text-white font-bold text-xs flex items-center justify-center gap-1 shadow-md"
         >
           <Calendar className="w-4 h-4" />
           Book
